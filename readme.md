@@ -83,6 +83,8 @@ Example of full configuration:
 
 To manage plugin's output use `useMavenLogger`, `quietLogs` and `outputFile`.
 
+You can play with [IntelliJ HTTP Client Demo][demo].
+
 ## Contributing
 
 Please read [Contributing](contributing.md).
@@ -107,7 +109,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-[Apache License v2.0](LICENSE)
+[Apache License v2.0](LICENSE)  
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 [http-client]: https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html
@@ -116,3 +118,4 @@ limitations under the License.
 
 [specification]: https://github.com/JetBrains/http-request-in-editor-spec
 
+[demo]: https://gitlab.com/radio_rogal/ijhttp-demo
