@@ -7,7 +7,7 @@
  * {@linkplain uk.bot_by.maven_plugin.ijhttp_maven_plugin.RunMojo#setExecutable(java.lang.String)
  * executable}.
  *
- * @author Witalij Berdinskich
+ * @author Vitalij Berdinskih
  * @since 1.0.0
  */
 package uk.bot_by.maven_plugin.ijhttp_maven_plugin;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Witalij Berdinskich
+ * Copyright 2023 Vitalij Berdinskih
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ import org.jetbrains.annotations.VisibleForTesting;
  * To manage plugin's output use {@link #useMavenLogger}, {@link #quietLogs} and
  * {@link #outputFile}.
  *
- * @author Witalij Berdinskich
+ * @author Vitalij Berdinskih
  * @see <a href="https://www.jetbrains.com/help/idea/http-client-cli.html">HTTP Client CLI</a>
  * @see <a href="https://www.youtube.com/live/mwiHAukbWjM?feature=share">Lve stream: The New HTTP
  * Client CLI</a>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-	Copyright 2023 Witalij Berdinskich
+	Copyright 2023 Vitalij Berdinskih
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -307,11 +307,11 @@
   <description>Run HTTP requests of integration tests</description>
   <developers>
     <developer>
-      <email>radio_rogal@posteo.pl</email>
-      <id>radio_rogal</id>
-      <name>Witalij Berdinskich</name>
+      <email>vitalij_r2@outlook.com</email>
+      <id>vitalijr2</id>
+      <name>Vitalij Berdinskih</name>
       <timezone>Europe/Kyiv</timezone>
-      <url>https://gitlab.com/radio_rogal</url>
+      <url>https://gitlab.com/vitalij_r2</url>
     </developer>
   </developers>
   <groupId>uk.bot-by.maven-plugin</groupId>
