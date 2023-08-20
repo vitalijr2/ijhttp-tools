@@ -18,6 +18,7 @@ Table of Contents
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
+![Screenshot](screenshot.png)
 ## Getting started
 
 Originally the HTTP Client plugin allows to create, edit, and execute HTTP requests directly in the
