@@ -28,4 +28,4 @@ and verify the issue you're about to submit isn't a duplicate.
  as it's tough to read otherwise. -->
 
 /label ~suggestion
-/assign @vitalij_r2
+/assign @vitalijr2

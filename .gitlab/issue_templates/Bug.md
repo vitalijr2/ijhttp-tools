@@ -41,4 +41,4 @@ Steps to reproduce the behavior:
 <!-- If you can, link to the line of code that might be responsible for the problem. -->
 
 /label ~bug
-/assign @vitalij_r2
+/assign @vitalijr2
