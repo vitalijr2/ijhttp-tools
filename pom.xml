@@ -24,7 +24,7 @@
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
         <groupId>org.apache.maven.plugins</groupId>
-        <version>3.3.1</version>
+        <version>3.3.2</version>
       </plugin>
       <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -128,7 +128,7 @@
           </properties>
         </configuration>
         <groupId>org.apache.maven.plugins</groupId>
-        <version>3.1.2</version>
+        <version>3.2.2</version>
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
@@ -156,7 +156,7 @@
           </execution>
         </executions>
         <groupId>org.apache.maven.plugins</groupId>
-        <version>3.1.2</version>
+        <version>3.2.2</version>
       </plugin>
       <plugin>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -234,7 +234,7 @@
           </execution>
         </executions>
         <groupId>org.jacoco</groupId>
-        <version>0.8.10</version>
+        <version>0.8.11</version>
       </plugin>
     </plugins>
   </build>
@@ -552,11 +552,11 @@
     <gitlab.release.url>https://gitlab.com/bot-by/ijhttp-maven-plugin/-/releases
     </gitlab.release.url>
     <java.version>17</java.version>
-    <javadoc-plugin.version>3.6.0</javadoc-plugin.version>
-    <junit-jupiter.version>5.10.0</junit-jupiter.version>
+    <javadoc-plugin.version>3.6.2</javadoc-plugin.version>
+    <junit-jupiter.version>5.10.1</junit-jupiter.version>
     <maven-minimal.version>3.8.5</maven-minimal.version>
-    <mockito.version>5.5.0</mockito.version>
-    <plugin-annotations.version>3.9.0</plugin-annotations.version>
+    <mockito.version>5.7.0</mockito.version>
+    <plugin-annotations.version>3.10.2</plugin-annotations.version>
     <plugin-api.version>3.9.4</plugin-api.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
