@@ -1,8 +1,8 @@
-# ijhttp tools: Maven Plugin and Spring Boot Test autoconfiguration
+# ijhttp tools
 
-I had started with Maven Plugin to run HTTP requests on the <em>integration-test</em> phase
-using the [IntelliJ HTTP Client][http-client]. Later I added Spring Boot Test autoconfiguration,
-thanks @GoncaloPT for [his idea][leverage-test].
+I had started with a Maven plugin to run HTTP requests on the <em>integration-test</em> phase
+using the [IntelliJ HTTP Client][http-client]. Later I added a Spring Boot Test autoconfiguration,
+thanks [@GoncaloPT][GoncaloPT] for [his idea][leverage-test].
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/73e1f8501ed84b0580dcf7ccee82c1e0)](https://app.codacy.com/gl/bot-by/ijhttp-maven-plugin/dashboard?utm_source=gl&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/73e1f8501ed84b0580dcf7ccee82c1e0)](https://app.codacy.com/gl/bot-by/ijhttp-maven-plugin/dashboard?utm_source=gl&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
@@ -11,13 +11,14 @@ thanks @GoncaloPT for [his idea][leverage-test].
 Table of Contents
 =================
 
-   * [Getting started](#getting-started)
-   * [Usage](#usage)
-      * [Maven Plugin](#maven-plugin)
-      * [Spring Boot Test autoconfiguration](#spring-boot-test-autoconfiguration)
-   * [Contributing](#contributing)
-   * [History](#history)
-   * [License](#license)
+* [Getting started](#getting-started)
+  * [Directories (extra feature)](#directories-extra-feature)
+* [Usage](#usage)
+  * [Maven plugin](#maven-plugin)
+  * [Spring Boot Test autoconfiguration](#spring-boot-test-autoconfiguration)
+* [Contributing](#contributing)
+* [History](#history)
+* [License](#license)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
@@ -38,11 +39,14 @@ describes format these files.
 
 Example requests:
 
-```language-apex
-GET https://example.com/api/get
+```http
+GET /api/get HTTP/1.1
+Accept: application/json
+Host: example.com
 
 ### Add an item
-POST https://example.com/api/add
+POST /api/add HTTP/1.1
+Host: example.com
 Content-Type: application/json
 
 {
@@ -51,6 +55,11 @@ Content-Type: application/json
 }
 ```
 
+### Directories (extra feature)
+
+**IntelliJ HTTP Client** needs HTTP files to work.
+With **HTTP Client Command Line** you can set directories that contain such files.
+
 ## Usage
 
 **Important!** Both plugin and autoconfiguration do not contain the HTTP client: you need
@@ -58,7 +67,7 @@ to install it by yourself then add to `PATH`. You can also set the full path to 
 via the parameter `executable`. The [HTTP Client Demo][demo] has some examples
 how to download the HTTP client.
 
-### Maven Plugin
+### Maven plugin
 
 [![Maven Central](https://img.shields.io/maven-central/v/uk.bot-by.ijhttp-tools/ijhttp-maven-plugin)](https://search.maven.org/artifact/uk.bot-by.ijhttp-tools/ijhttp-maven-plugin)
 [![Javadoc](https://javadoc.io/badge2/uk.bot-by.ijhttp-tools/ijhttp-maven-plugin/javadoc.svg)](https://javadoc.io/doc/uk.bot-by.ijhttp-tools/ijhttp-maven-plugin)
@@ -67,7 +76,7 @@ There is one goal **run**. To use it add the plugin to your POM.
 
 Example of full configuration:
 
-```language-xml
+```xml
 <plugin>
   <groupId>uk.bot-by.ijhttp-tools</groupId>
   <artifactId>ijhttp-maven-plugin</artifactId>
@@ -75,6 +84,10 @@ Example of full configuration:
   <executions>
     <execution>
       <configuration>
+       <!-- At least one file or directory is required. -->
+       <directories>
+         <directory>src/test/resources</directory>
+       </directories>
        <environmentFile>public-env.json</environmentFile>
        <environmentName>dev</environmentName>
        <files>
@@ -98,6 +111,9 @@ To manage plugin's output use `useMavenLogger`, `quietLogs` and `outputFile`.
 
 ### Spring Boot Test autoconfiguration
 
+[![Maven Central](https://img.shields.io/maven-central/v/uk.bot-by.ijhttp-tools/ijhttp-spring-boot-test)](https://search.maven.org/artifact/uk.bot-by.ijhttp-tools/ijhttp-spring-boot-test)
+[![Javadoc](https://javadoc.io/badge2/uk.bot-by.ijhttp-tools/ijhttp-spring-boot-test/javadoc.svg)](https://javadoc.io/doc/uk.bot-by.ijhttp-tools/ijhttp-spring-boot-test)
+
 You can set configuration in `application.yaml` or manually, or combine both ways.
 
 Example of autoconfiguration, full configuration:
@@ -106,6 +122,8 @@ Example of autoconfiguration, full configuration:
 ijhttp:
   parameters:
     connect-timeout: 9000
+    directories:
+     - src/test/resources/ijhttp
     # docker-mode: false default value
     environment-file: public-env.json
     environment-name: dev
@@ -163,7 +181,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-http://www.apache.org/licenses/LICENSE-2.0
+https://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -172,9 +190,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 [Apache License v2.0](LICENSE)  
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 [http-client]: https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html
+
+[GoncaloPT]: https://github.com/GoncaloPT
 
 [leverage-test]: https://github.com/bot-by/ijhttp-maven-plugin/issues/51 "Leverage test instead of using main app"
 

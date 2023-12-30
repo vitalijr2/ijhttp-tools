@@ -6,7 +6,7 @@
 	you may not use this file except in compliance with the License.
 	You may obtain a copy of the License at
 
-	    http://www.apache.org/licenses/LICENSE-2.0
+	    https://www.apache.org/licenses/LICENSE-2.0
 
 	Unless required by applicable law or agreed to in writing, software
 	distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,7 +16,7 @@
 -->
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <artifactId>ijhttp-spring-boot-test</artifactId>
   <build>
     <plugins>
@@ -39,7 +39,7 @@
             <path>
               <artifactId>spring-boot-configuration-processor</artifactId>
               <groupId>org.springframework.boot</groupId>
-              <version>${configuration-processor.version}</version>
+              <version>${spring-boot.version}</version>
             </path>
           </annotationProcessorPaths>
         </configuration>
@@ -88,23 +88,13 @@
     <dependency>
       <artifactId>spring-boot-starter-test</artifactId>
       <groupId>org.springframework.boot</groupId>
-      <version>3.2.0</version>
-    </dependency>
-    <dependency>
-      <!--
-        CVE-2023-6378: A serialization vulnerability in
-        logback receiver component part of logback version 1.4.11 allows an attacker
-        to mount a Denial-Of-Service attack by sending poisoned data.
-      -->
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.4.14</version>
+      <version>${spring-boot.version}</version>
     </dependency>
     <dependency>
       <artifactId>spring-boot-configuration-processor</artifactId>
       <groupId>org.springframework.boot</groupId>
       <optional>true</optional>
-      <version>${configuration-processor.version}</version>
+      <version>${spring-boot.version}</version>
     </dependency>
     <dependency>
       <artifactId>slf4j-api</artifactId>
@@ -143,11 +133,11 @@
       <version>2.0.0</version>
     </dependency>
   </dependencies>
-  <description>The Spring Boot Test autoconfiguration to run HTTP requests on the integration-test
-    phase using the IntelliJ HTTP Client.
+  <description>The Spring Boot Test autoconfiguration to run HTTP requests by using the IntelliJ
+    HTTP Client.
   </description>
   <modelVersion>4.0.0</modelVersion>
-  <name>ijhttp tools : Spring Boot Test</name>
+  <name>ijhttp tools : Spring Boot Test autoconfiguration</name>
   <packaging>jar</packaging>
   <parent>
     <artifactId>ijhttp-parent</artifactId>
@@ -177,10 +167,10 @@
                   https://javadoc.io/doc/org.apache.commons/commons-exec/${commons-exec.version}
                 </link>
                 <link>
-                  https://javadoc.io/doc/org.springframework.boot/spring-boot-autoconfigure/${configuration-processor.version}
+                  https://javadoc.io/doc/org.springframework.boot/spring-boot-autoconfigure/${spring-boot.version}
                 </link>
                 <link>
-                  https://javadoc.io/doc/org.springframework.boot/spring-boot-test-autoconfigure/${configuration-processor.version}
+                  https://javadoc.io/doc/org.springframework.boot/spring-boot-test-autoconfigure/${spring-boot.version}
                 </link>
               </links>
             </configuration>
@@ -192,6 +182,6 @@
     </profile>
   </profiles>
   <properties>
-    <configuration-processor.version>3.2.0</configuration-processor.version>
+    <spring-boot.version>3.2.1</spring-boot.version>
   </properties>
 </project>
