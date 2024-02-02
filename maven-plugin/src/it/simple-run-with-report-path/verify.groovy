@@ -1,3 +1,7 @@
-File report = new File(basedir, "target/ijhttp-reports/report.xml")
+static void testReportXml(File fromDirectory) {
+    File report = new File(fromDirectory, 'target/ijhttp-reports/report.xml')
 
-assert report.exists()
+    assert report.file
+}
+
+testReportXml(basedir)
