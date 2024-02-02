@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2023-2024 bot-by
+  Copyright 2023-2024 Vitalij Berdinskikh
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <artifactId>ijhttp-parent</artifactId>
+  <artifactId>ijhttp-tools</artifactId>
   <build>
     <defaultGoal>clean verify</defaultGoal>
     <pluginManagement>
@@ -190,12 +190,16 @@
           <groupId>org.jacoco</groupId>
           <version>0.8.11</version>
         </plugin>
+        <plugin>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <groupId>org.apache.maven.plugins</groupId>
+          <version>${javadoc-plugin.version}</version>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
-        <groupId>org.apache.maven.plugins</groupId>
         <configuration>
           <fast>true</fast>
           <filesets>
@@ -204,6 +208,7 @@
             </fileset>
           </filesets>
         </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -263,7 +268,7 @@
   </build>
   <ciManagement>
     <system>GitLab</system>
-    <url>https://gitlab.com/bot-by/ijhttp-maven-plugin/-/pipelines</url>
+    <url>https://gitlab.com/vitalijr2/ijhttp-tools/-/pipelines</url>
   </ciManagement>
   <dependencyManagement>
     <dependencies>
@@ -317,7 +322,9 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-  <description>Maven plugin and Spring Boot Test autoconfiguration for IntelliJ HTTP Client</description>
+  <description>Maven plugin, Spring Boot Test autoconfiguration and jUnit Extension for IntelliJ
+    HTTP Client
+  </description>
   <developers>
     <developer>
       <email>vitalij_r2@outlook.com</email>
@@ -327,11 +334,11 @@
       <url>https://gitlab.com/vitalijr2</url>
     </developer>
   </developers>
-  <groupId>uk.bot-by.ijhttp-tools</groupId>
+  <groupId>io.gitlab.vitalijr2.ijhttp-tools</groupId>
   <inceptionYear>2023</inceptionYear>
   <issueManagement>
     <system>GitLab</system>
-    <url>https://gitlab.com/bot-by/ijhttp-maven-plugin/-/issues</url>
+    <url>https://gitlab.com/vitalijr2/ijhttp-tools/-/issues</url>
   </issueManagement>
   <licenses>
     <license>
@@ -344,14 +351,11 @@
   <modelVersion>4.0.0</modelVersion>
   <modules>
     <module>command-line</module>
+    <module>junit-extension</module>
     <module>maven-plugin</module>
     <module>spring-boot-test</module>
   </modules>
   <name>ijhttp tools</name>
-  <organization>
-    <name>bot-by</name>
-    <url>https://bot-by.uk</url>
-  </organization>
   <packaging>pom</packaging>
   <profiles>
     <profile>
@@ -392,7 +396,6 @@
               </execution>
             </executions>
             <groupId>org.apache.maven.plugins</groupId>
-            <version>${javadoc-plugin.version}</version>
           </plugin>
         </plugins>
       </build>
@@ -493,7 +496,6 @@
                 </reports>
               </reportSet>
             </reportSets>
-            <version>${javadoc-plugin.version}</version>
           </plugin>
           <plugin>
             <artifactId>maven-project-info-reports-plugin</artifactId>
@@ -520,8 +522,8 @@
     <changelist>-SNAPSHOT</changelist>
     <commons-exec.version>1.4.0</commons-exec.version>
     <docs-maven-skin.version>2.3.2</docs-maven-skin.version>
-    <github.release.url>https://github.com/bot-by/ijhttp-maven-plugin/releases</github.release.url>
-    <gitlab.release.url>https://gitlab.com/bot-by/ijhttp-maven-plugin/-/releases
+    <github.release.url>https://github.com/vitalijr2/ijhttp-tools/releases</github.release.url>
+    <gitlab.release.url>https://gitlab.com/vitalijr2/ijhttp-tools/-/releases
     </gitlab.release.url>
     <java.version>17</java.version>
     <javadoc-plugin.version>3.6.3</javadoc-plugin.version>
@@ -531,14 +533,14 @@
     <mockito.version>5.10.0</mockito.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <revision>1.2.1</revision>
+    <revision>1.3.0</revision>
     <sha1/>
   </properties>
   <scm>
-    <connection>scm:git:https://gitlab.com/bot-by/ijhttp-maven-plugin.git</connection>
-    <developerConnection>scm:git:git@gitlab.com:bot-by/ijhttp-maven-plugin.git</developerConnection>
-    <url>https://gitlab.com/bot-by/ijhttp-maven-plugin</url>
+    <connection>scm:git:https://gitlab.com/vitalijr2/ijhttp-tools.git</connection>
+    <developerConnection>scm:git:git@gitlab.com:vitalijr2/ijhttp-tools.git</developerConnection>
+    <url>https://gitlab.com/vitalijr2/ijhttp-tools</url>
   </scm>
-  <url>https://gitlab.com/bot-by/ijhttp-maven-plugin</url>
+  <url>https://gitlab.com/vitalijr2/ijhttp-tools</url>
   <version>${revision}${changelist}${sha1}</version>
 </project>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2023-2024 Vitalij Berdinskih
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>ijhttp-junit-extension</artifactId>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <groupId>org.codehaus.mojo</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <groupId>org.jacoco</groupId>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <artifactId>ijhttp-command-line</artifactId>
+      <groupId>io.gitlab.vitalijr2.ijhttp-tools</groupId>
+      <version>${revision}${changelist}${sha1}</version>
+    </dependency>
+    <dependency>
+      <artifactId>junit-jupiter-api</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <artifactId>annotations</artifactId>
+      <groupId>org.jetbrains</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>commons-exec</artifactId>
+      <groupId>org.apache.commons</groupId>
+    </dependency>
+    <!-- test -->
+    <dependency>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>junit-jupiter-params</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>mockito-core</artifactId>
+      <groupId>org.mockito</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <groupId>org.mockito</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>hamcrest</artifactId>
+      <groupId>org.hamcrest</groupId>
+    </dependency>
+  </dependencies>
+  <description>The jUnit Extension to run HTTP requests by using the IntelliJ HTTP Client.
+  </description>
+  <modelVersion>4.0.0</modelVersion>
+  <name>ijhttp tools : jUnit Extension</name>
+  <packaging>jar</packaging>
+  <parent>
+    <artifactId>ijhttp-tools</artifactId>
+    <groupId>io.gitlab.vitalijr2.ijhttp-tools</groupId>
+    <version>${revision}${changelist}${sha1}</version>
+  </parent>
+  <profiles>
+    <profile>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-invoker-plugin</artifactId>
+            <groupId>org.apache.maven.plugins</groupId>
+          </plugin>
+        </plugins>
+      </build>
+      <id>run-its</id>
+    </profile>
+    <profile>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <configuration>
+              <links>
+                <link>
+                  https://javadoc.io/doc/org.apache.commons/commons-exec/${commons-exec.version}
+                </link>
+                <link>
+                  https://javadoc.io/doc/org.jetbrains/annotations/${jetbrains-annotations.version}
+                </link>
+              </links>
+            </configuration>
+            <groupId>org.apache.maven.plugins</groupId>
+          </plugin>
+        </plugins>
+      </build>
+      <id>javadocs</id>
+    </profile>
+  </profiles>
+</project>

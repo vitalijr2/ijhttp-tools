@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ijhttp tools : jUnit Extension</title>
+</head>
+<body>
+<p>Originally the <a
+    href="https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html">IntelliJ HTTP
+  Client</a> plugin allows to create, edit, and execute HTTP requests directly in the
+  IntelliJ IDEA code editor. The IntelliJ HTTP Client is also <a
+      href="https://www.jetbrains.com/help/idea/http-client-cli.html">available as a CLI tool</a>.
+</p>
+<p>jUnit Extension allows to run HTTP requests using the IntelliJ HTTP Client.</p>
+<p>The <a
+    href="https://github.com/JetBrains/http-request-in-editor-spec">HTTP Request in Editor
+  Specification</a> describes format these files.</p>
+<p>Example requests:</p>
+<pre><code class="language-http">
+GET /api/get HTTP/1.1
+Accept: application/json
+Host: example.com
+
+### Add an item
+POST /api/add HTTP/1.1
+Host: example.com
+Content-Type: application/json
+
+{
+  "name": "entity",
+  "value": "content"
+}
+</code></pre>
+</body>
+</html>
