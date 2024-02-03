@@ -27,7 +27,7 @@ import org.junit.platform.commons.logging.LoggerFactory;
 import io.gitlab.vitalij_r2.ijhttp_tools.command_line.HttpClientCommandLine;
 import io.gitlab.vitalij_r2.ijhttp_tools.command_line.LogLevel;
 
-class HttpClientCommandLineExtension implements ParameterResolver {
+public class HttpClientCommandLineExtension implements ParameterResolver {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(HttpClientCommandLineExtension.class);
 

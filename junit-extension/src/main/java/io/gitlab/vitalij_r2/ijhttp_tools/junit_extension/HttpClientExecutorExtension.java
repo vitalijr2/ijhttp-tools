@@ -29,7 +29,7 @@ import org.junit.jupiter.api.extension.ParameterResolver;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
 
-class HttpClientExecutorExtension implements ParameterResolver {
+public class HttpClientExecutorExtension implements ParameterResolver {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(
       HttpClientCommandLineExtension.class);

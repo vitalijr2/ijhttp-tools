@@ -59,7 +59,8 @@
           <configuration>
             <archive>
               <manifestEntries>
-                <Created-By>${project.organization.name}</Created-By>
+                <Created-By>${java.vm.version} (${java.vm.vendor})</Created-By>
+                <Name>${project.name}</Name>
               </manifestEntries>
             </archive>
           </configuration>

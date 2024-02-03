@@ -1,6 +1,5 @@
 /**
- * The jUnit Extension allows to run HTTP requests on the <em>integration-test</em> phase using the
- * IntelliJ HTTP Client.
+ * The jUnit Extension allows to run HTTP requests using the IntelliJ HTTP Client.
  * <p>
  * The <a href="https://github.com/JetBrains/http-request-in-editor-spec">HTTP Request in Editor
  * Specification</a> describes format these files.
