@@ -7,7 +7,8 @@
  * <strong>Important!</strong> The plugin does not contain the HTTP client: you need to install it
  * by yourself then add to {@code PATH}. You can also set the full path to the ijhttp via the
  * parameter
- * {@linkplain io.gitlab.vitalij_r2.ijhttp_tools.junit_extension.HttpClientCommandLineParameters#executable()
+ * {@linkplain
+ * io.gitlab.vitalij_r2.ijhttp_tools.junit_extension.HttpClientCommandLineParameters#executable()
  * executable}.
  * <p>
  * The <a href="https://gitlab.com/vitalijr2/ijhttp-demo">IntelliJ HTTP Client Demo</a> has some
