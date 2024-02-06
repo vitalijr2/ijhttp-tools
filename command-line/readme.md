@@ -3,8 +3,8 @@
 [![Maven Central](https://img.shields.io/maven-central/v/io.gitlab.vitalijr2.ijhttp-tools/ijhttp-command-line)](https://search.maven.org/artifact/io.gitlab.vitalijr2.ijhttp-tools/ijhttp-command-line)
 [![Javadoc](https://javadoc.io/badge2/io.gitlab.vitalijr2.ijhttp-tools/ijhttp-command-line/javadoc.svg)](https://javadoc.io/doc/io.gitlab.vitalijr2.ijhttp-tools/ijhttp-command-line)
 
-The builder-style component [HttpClientCommandLine][component] helps to prepare command line
-to run [Intellij HTTP Client CLI tool][cli-tool].
+The builder-style component [HttpClientCommandLine][component] helps
+to prepare command line to run [Intellij HTTP Client CLI tool][cli-tool].
 
 The minimal configuration contains HTTP files only:
 

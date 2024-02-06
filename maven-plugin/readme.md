@@ -7,7 +7,8 @@ The Maven plugin allows to run HTTP requests
 on the _integration-test_ phase
 using the [IntelliJ HTTP Client][http-client].
 
-The [HTTP Request in Editor Specification][specification] describes format these files.
+The [HTTP Request in Editor Specification][specification]
+describes format these files.
 
 Example of test request:
 
