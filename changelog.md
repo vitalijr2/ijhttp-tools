@@ -39,8 +39,9 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### Security
 
-- CVE-2023-6378: A serialization vulnerability in logback receiver component part of logback version
-  1.4.11 allows an attacker to mount a Denial-Of-Service attack by sending poisoned data.
+- CVE-2023-6378: A serialization vulnerability in logback receiver component
+  part of logback version 1.4.11 allows an attacker
+  to mount a Denial-Of-Service attack by sending poisoned data.
 
 ## 1.1.0 - 2023-12-20
 
@@ -55,7 +56,8 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### Fixed
 
-- Environment variables, public and private, are added without handling quoting
+- Environment variables, public and private, are added
+  without handling quoting
 
 ## 1.0.0 - 2023-05-05
 
