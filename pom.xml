@@ -385,7 +385,7 @@
               <show>public</show>
               <top><![CDATA[
 <link rel="stylesheet" type="text/css" href="{@docRoot}/resources/prism.css"/>
-<link rel="stylesheet" type="text/css" href="{@docRoot}/resources/ijhttp.css"/>
+<link rel="stylesheet" type="text/css" href="{@docRoot}/resources/ijhttp-tools.css"/>
 							]]></top>
             </configuration>
             <executions>
