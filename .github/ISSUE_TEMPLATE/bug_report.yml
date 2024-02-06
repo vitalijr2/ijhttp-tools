@@ -17,6 +17,8 @@ body:
         and verify the issue you're about to submit isn't a duplicate.
   - type: input
     id: summary
+    validations:
+      required: true
     attributes:
       label: Summary
       description: A clear and concise description of what the bug is.
