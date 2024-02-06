@@ -1,3 +1,6 @@
 {
+  "no-duplicate-heading": {
+    "siblings_only": true
+  },
   "required-headings": false
 }
