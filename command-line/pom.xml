@@ -42,6 +42,13 @@
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Automatic-Module-Name>ijhttp_tools.command_line</Automatic-Module-Name>
+            </manifestEntries>
+          </archive>
+        </configuration>
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>

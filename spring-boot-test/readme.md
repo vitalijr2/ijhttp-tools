@@ -3,10 +3,13 @@
 [![Maven Central](https://img.shields.io/maven-central/v/uk.bot-by.ijhttp-tools/ijhttp-spring-boot-test)](https://search.maven.org/artifact/uk.bot-by.ijhttp-tools/ijhttp-spring-boot-test)
 [![Javadoc](https://javadoc.io/badge2/uk.bot-by.ijhttp-tools/ijhttp-spring-boot-test/javadoc.svg)](https://javadoc.io/doc/uk.bot-by.ijhttp-tools/ijhttp-spring-boot-test)
 
-The Spring Boot Test autoconfiguration allows to run them with Spring Boot Test using
-the [IntelliJ HTTP Client][http-client], you don't need to package and run whole application.
+The Spring Boot Test autoconfiguration allows
+to run them with Spring Boot Test using
+the [IntelliJ HTTP Client][http-client],
+you don't need to package and run whole application.
 
-The [HTTP Request in Editor Specification][specification] describes format these files.
+The [HTTP Request in Editor Specification][specification]
+describes format these files.
 
 Example of test request:
 
@@ -28,9 +31,12 @@ Content-Type: application/json
 
 ## Configuration
 
-**Important!** The autoconfiguration does not contain the [HTTP client][cli-tool]:
-you need to install it by yourself then add to `PATH`. You can also set the full path to the ijhttp
-via the parameter `executable`. The [HTTP Client Demo][demo] has some examples how to download
+**Important!** The autoconfiguration does not contain
+the [HTTP client][cli-tool]: you need to install
+it by yourself then add to `PATH`.
+You can also set the full path to the **ijhttp**
+via the parameter `executable`.
+The [HTTP Client Demo][demo] has some examples how to download
 the HTTP client.
 
 Example of autoconfiguration, full configuration:
@@ -60,6 +66,7 @@ ijhttp:
 ```
 
 ```java
+
 @SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
 @AutoConfigureHttpClientCommandLine(timeout = 7000)
 class HttpClientCommandLineApplicationTests {

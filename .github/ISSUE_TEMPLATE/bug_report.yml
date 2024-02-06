@@ -1,0 +1,68 @@
+name: Bug report
+description: Create a report to help me improve
+labels:
+  - bug
+assignees: [ "vitalijr2" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+        **Before opening a new issue**, make sure to search for keywords in the issues
+        filtered by the "bug" label:
+
+        * https://github.com/vitalijr2/ijhttp-tools/issues?q=is%3Aissue+label%3Abug+
+
+        and verify the issue you're about to submit isn't a duplicate.
+  - type: input
+    id: summary
+    validations:
+      required: true
+    attributes:
+      label: Summary
+      description: A clear and concise description of what the bug is.
+  - type: textarea
+    id: what-happened
+    validations:
+      required: true
+    attributes:
+      label: What is the current bug behavior?
+      description: Describe what actually happens.
+      placeholder: Tell us what you do and what you see!
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1. ...
+        2. ...
+        3. ...
+        ...
+  - type: textarea
+    id: expected
+    validations:
+      required: true
+    attributes:
+      label: What is the expected correct behavior?
+      description: Describe what you should see instead.
+      placeholder: Tell us what you expected to get!
+  - type: textarea
+    id: misc
+    attributes:
+      label: Additional context
+      description: Add any other context about the problem here.
+  - type: textarea
+    id: fixes
+    attributes:
+      label: Possible fixes
+      description: If you can, link to the line of code that might be responsible for the problem.
+  - type: markdown
+    attributes:
+      value: |
+        Paste any relevant logs - please use code blocks (```)
+        to format console output, logs, and code as it's tough
+        to read otherwise.
+
+        **Do not attach ZIP files** of your code or compiled projects - instead,
+        please publish your code to a public GitHub repo & post a link to it.

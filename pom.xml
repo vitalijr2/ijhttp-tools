@@ -59,7 +59,8 @@
           <configuration>
             <archive>
               <manifestEntries>
-                <Created-By>${project.organization.name}</Created-By>
+                <Created-By>${java.vm.version} (${java.vm.vendor})</Created-By>
+                <Name>${project.name}</Name>
               </manifestEntries>
             </archive>
           </configuration>
@@ -384,7 +385,7 @@
               <show>public</show>
               <top><![CDATA[
 <link rel="stylesheet" type="text/css" href="{@docRoot}/resources/prism.css"/>
-<link rel="stylesheet" type="text/css" href="{@docRoot}/resources/ijhttp.css"/>
+<link rel="stylesheet" type="text/css" href="{@docRoot}/resources/ijhttp-tools.css"/>
 							]]></top>
             </configuration>
             <executions>
@@ -528,7 +529,7 @@
     <java.version>17</java.version>
     <javadoc-plugin.version>3.6.3</javadoc-plugin.version>
     <jetbrains-annotations.version>24.1.0</jetbrains-annotations.version>
-    <junit-jupiter.version>5.10.1</junit-jupiter.version>
+    <junit-jupiter.version>5.10.2</junit-jupiter.version>
     <maven-minimal.version>3.8.5</maven-minimal.version>
     <mockito.version>5.10.0</mockito.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
