@@ -15,7 +15,8 @@ To manage plugin's output use `useMavenLogger`, `quietLogs` and `outputFile`.
 
 ## Parameters
 
-The parameters equal to arguments of `ijhttp`. Run `ijhttp --help` to learn them.
+The parameters equal to arguments of `ijhttp`.
+Run `ijhttp --help` to learn them.
 
 - **connectTimeout** - Number of milliseconds for connection.
   Defaults to _3000_.
@@ -83,6 +84,7 @@ The parameters equal to arguments of `ijhttp`. Run `ijhttp --help` to learn them
 ## Example of configuration
 
 ```xml
+
 <plugin>
   <groupId>io.gitlab.vitalijr2.ijhttp-tools</groupId>
   <artifactId>ijhttp-maven-plugin</artifactId>

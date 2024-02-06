@@ -13,7 +13,10 @@ the HTTP client.
 Use annotations `HttpClientExecutor` and `HttpClientCommandLineParameters`
 to initialise and configure both executor and command line builder.
 
-The parameters equal to arguments of `ijhttp`. Run `ijhttp --help` to learn them.
+## Parameters
+
+The parameters equal to arguments of `ijhttp`.
+Run `ijhttp --help` to learn them.
 
 - **connect-timeout** - Number of milliseconds for connection.
   Defaults to _3000_.
