@@ -529,7 +529,7 @@
     <java.version>17</java.version>
     <javadoc-plugin.version>3.6.3</javadoc-plugin.version>
     <jetbrains-annotations.version>24.1.0</jetbrains-annotations.version>
-    <junit-jupiter.version>5.10.1</junit-jupiter.version>
+    <junit-jupiter.version>5.10.2</junit-jupiter.version>
     <maven-minimal.version>3.8.5</maven-minimal.version>
     <mockito.version>5.10.0</mockito.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
