@@ -7,6 +7,7 @@ The builder-style component [HttpClientCommandLine][component] helps to prepare 
 to run [Intellij HTTP Client CLI tool][cli-tool].
 
 The minimal configuration contains HTTP files only:
+
 ```java
 var commandLine = new HttpClientCommandLine();
 var executor = new DefaultExecutor();
@@ -14,8 +15,12 @@ var orders = Path.of("orders/orders.http");
 var products = Path.of("catalog/products.http");
 var checkout = Path.of("orders/checkout.http");
 
-commandLine.files(orders, products, checkout);
-executor.execute(commandLine.getCommandLine());
+commandLine.
+
+files(orders, products, checkout);
+executor.
+
+execute(commandLine.getCommandLine());
 ```
 
 ## Directories
@@ -24,6 +29,7 @@ executor.execute(commandLine.getCommandLine());
 With **HTTP Client Command Line** you can set directories that contain such files.
 
 The same example as above but with directories looks like:
+
 ```java
 var commandLine = new HttpClientCommandLine();
 var executor = new DefaultExecutor();

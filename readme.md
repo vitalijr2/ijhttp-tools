@@ -1,8 +1,11 @@
 # Maven plugin, Spring Boot Test autoconfiguration and jUnit Extension for IntelliJ HTTP Client
 
-I had started with a Maven plugin to run HTTP requests on the <em>integration-test</em> phase
-using the [IntelliJ HTTP Client][http-client]. Later I added a Spring Boot Test autoconfiguration,
-thanks [@GoncaloPT][GoncaloPT] for [his idea][leverage-test]. Next step was jUnit Extension.
+I had started with a Maven plugin to run HTTP requests
+on the <em>integration-test</em> phase
+using the [IntelliJ HTTP Client][http-client].
+Later I added a Spring Boot Test autoconfiguration,
+thanks [@GoncaloPT][GoncaloPT] for [his idea][leverage-test].
+Next step was jUnit Extension.
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/73e1f8501ed84b0580dcf7ccee82c1e0)](https://app.codacy.com/gl/bot-by/ijhttp-maven-plugin/dashboard?utm_source=gl&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/73e1f8501ed84b0580dcf7ccee82c1e0)](https://app.codacy.com/gl/bot-by/ijhttp-maven-plugin/dashboard?utm_source=gl&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
@@ -27,12 +30,13 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 ## Getting started
 
-Originally the IntelliJ HTTP Client plugin allows to create, edit, and execute HTTP requests
-directly in the IntelliJ IDEA code editor.
+Originally the IntelliJ HTTP Client plugin allows to create, edit,
+and execute HTTP requests directly in the IntelliJ IDEA code editor.
 The IntelliJ HTTP Client is also [available as a CLI tool][cli-tool].
 
-The Maven plugin and jUnit Extension allow to run HTTP requests on the <em>integration-test</em>
-phase using the IntelliJ HTTP Client. The Spring Boot Test autoconfiguration allows to run them with
+The Maven plugin and jUnit Extension allow to run HTTP requests
+on the <em>integration-test</em> phase using the IntelliJ HTTP Client.
+The Spring Boot Test autoconfiguration allows to run them with
 Spring Boot Test, you don't need to package and run whole application.
 
 The [HTTP Request in Editor Specification][specification]
@@ -59,12 +63,14 @@ Content-Type: application/json
 ### Directories (extra feature)
 
 **IntelliJ HTTP Client** needs HTTP files to work.
-With **HTTP Client Command Line** you can set directories that contain such files.
+With **HTTP Client Command Line** you can set directories
+that contain such files.
 
 ## Usage
 
-**Important!** plugin, extension and autoconfiguration do not contain the HTTP client: you need
-to install it by yourself then add to `PATH`. You can also set the full path to the ijhttp
+**Important!** plugin, extension and autoconfiguration
+do not contain the HTTP client: you need to install it by yourself
+then add to `PATH`. You can also set the full path to the **ijhttp**
 via the parameter `executable`. The [HTTP Client Demo][demo] has some examples
 how to download the HTTP client.
 
@@ -116,8 +122,8 @@ To manage plugin's output use `useMavenLogger`, `quietLogs` and `outputFile`.
 [![Maven Central](https://img.shields.io/maven-central/v/uk.bot-by.ijhttp-tools/ijhttp-junit-extension)](https://search.maven.org/artifact/uk.bot-by.ijhttp-tools/ijhttp-junit-extension)
 [![Javadoc](https://javadoc.io/badge2/uk.bot-by.ijhttp-tools/ijhttp-junit-extension/javadoc.svg)](https://javadoc.io/doc/uk.bot-by.ijhttp-tools/ijhttp-junit-extension)
 
-Use annotations `HttpClientExecutor` and `HttpClientCommandLineParameters` to initialise and
-configure both executor and command line builder.
+Use annotations `HttpClientExecutor` and `HttpClientCommandLineParameters`
+to initialise and configure both executor and command line builder.
 
 Example of full configuration:
 
@@ -149,7 +155,8 @@ class HttpClientCommandLineApplicationTests {
 [![Maven Central](https://img.shields.io/maven-central/v/uk.bot-by.ijhttp-tools/ijhttp-spring-boot-test)](https://search.maven.org/artifact/uk.bot-by.ijhttp-tools/ijhttp-spring-boot-test)
 [![Javadoc](https://javadoc.io/badge2/uk.bot-by.ijhttp-tools/ijhttp-spring-boot-test/javadoc.svg)](https://javadoc.io/doc/uk.bot-by.ijhttp-tools/ijhttp-spring-boot-test)
 
-You can set configuration in `application.yaml` or manually, or combine both ways.
+You can set configuration in `application.yaml` or manually,
+or combine both ways.
 
 Example of autoconfiguration, full configuration:
 
@@ -225,7 +232,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-[Apache License v2.0](LICENSE)  
+[Apache License v2.0](LICENSE)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 [http-client]: https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html

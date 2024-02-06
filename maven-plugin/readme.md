@@ -3,7 +3,8 @@
 [![Maven Central](https://img.shields.io/maven-central/v/uk.bot-by.ijhttp-tools/ijhttp-maven-plugin)](https://search.maven.org/artifact/uk.bot-by.ijhttp-tools/ijhttp-maven-plugin)
 [![Javadoc](https://javadoc.io/badge2/uk.bot-by.ijhttp-tools/ijhttp-maven-plugin/javadoc.svg)](https://javadoc.io/doc/uk.bot-by.ijhttp-tools/ijhttp-maven-plugin)
 
-The Maven plugin allows to run HTTP requests on the <em>integration-test</em> phase
+The Maven plugin allows to run HTTP requests
+on the <em>integration-test</em> phase
 using the [IntelliJ HTTP Client][http-client].
 
 The [HTTP Request in Editor Specification][specification] describes format these files.
@@ -29,8 +30,10 @@ Content-Type: application/json
 ## Configuration
 
 **Important!** The plugin does not contain the [HTTP client][cli-tool]:
-you need to install it by yourself then add to `PATH`. You can also set the full path to the ijhttp
-via the parameter `executable`. The [HTTP Client Demo][demo] has some examples how to download
+you need to install it by yourself then add to `PATH`.
+You can also set the full path to the **ijhttp**
+via the parameter `executable`.
+The [HTTP Client Demo][demo] has some examples how to download
 the HTTP client.
 
 There is one goal **run**. To use it add the plugin to your POM.
@@ -38,6 +41,7 @@ There is one goal **run**. To use it add the plugin to your POM.
 Example of full configuration:
 
 ```xml
+
 <plugin>
   <groupId>io.gitlab.vitalijr2.ijhttp-tools</groupId>
   <artifactId>ijhttp-maven-plugin</artifactId>
