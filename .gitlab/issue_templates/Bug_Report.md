@@ -1,6 +1,4 @@
 <!---
-Please read this!
-
 Before opening a new issue, make sure to search for keywords in the issues
 filtered by the "bug" label:
 
@@ -13,32 +11,39 @@ and verify the issue you're about to submit isn't a duplicate.
 
 <!-- A clear and concise description of what the bug is. -->
 
-### Steps to reproduce
-
-<!--
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
--->
-
 ### What is the current *bug* behavior?
 
 <!-- Describe what actually happens. -->
+
+### Steps to reproduce
+
+<!--
+1. ...
+2. ...
+3. ...
+...
+-->
 
 ### What is the expected *correct* behavior?
 
 <!-- Describe what you should see instead. -->
 
-### Relevant logs and/or screenshots
+### Additional context
 
-<!-- Paste any relevant logs - please use code blocks (```) to format console output, logs, and code
- as it's tough to read otherwise. -->
+<!-- Add any other context about the problem here. -->
 
 ### Possible fixes
 
-<!-- If you can, link to the line of code that might be responsible for the problem. -->
+<!--
+If you can, link to the line of code that might be responsible
+for the problem.
+-->
+
+### Relevant logs and/or screenshots
+
+<!-- Paste any relevant logs - please use code blocks (```)
+to format console output, logs, and code as it's tough
+to read otherwise. -->
 
 /label ~bug
 /assign @vitalijr2
