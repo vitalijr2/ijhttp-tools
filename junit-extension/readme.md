@@ -4,7 +4,7 @@
 [![Javadoc](https://javadoc.io/badge2/uk.bot-by.ijhttp-tools/ijhttp-junit-extension/javadoc.svg)](https://javadoc.io/doc/uk.bot-by.ijhttp-tools/ijhttp-junit-extension)
 
 The jUnit Extension allows to run HTTP requests
-on the <em>integration-test</em> phase
+on the _integration-test_ phase
 using the [IntelliJ HTTP Client][http-client].
 
 The [HTTP Request in Editor Specification][specification]

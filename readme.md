@@ -1,7 +1,7 @@
 # Maven plugin, Spring Boot Test autoconfiguration and jUnit Extension for IntelliJ HTTP Client
 
 I had started with a Maven plugin to run HTTP requests
-on the <em>integration-test</em> phase
+on the _integration-test_ phase
 using the [IntelliJ HTTP Client][http-client].
 Later I added a Spring Boot Test autoconfiguration,
 thanks [@GoncaloPT][GoncaloPT] for [his idea][leverage-test].
@@ -35,7 +35,7 @@ and execute HTTP requests directly in the IntelliJ IDEA code editor.
 The IntelliJ HTTP Client is also [available as a CLI tool][cli-tool].
 
 The Maven plugin and jUnit Extension allow to run HTTP requests
-on the <em>integration-test</em> phase using the IntelliJ HTTP Client.
+on the _integration-test_ phase using the IntelliJ HTTP Client.
 The Spring Boot Test autoconfiguration allows to run them with
 Spring Boot Test, you don't need to package and run whole application.
 
