@@ -7,8 +7,8 @@ Later I added a Spring Boot Test autoconfiguration,
 thanks [@GoncaloPT][GoncaloPT] for [his idea][leverage-test].
 Next step was jUnit Extension.
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/73e1f8501ed84b0580dcf7ccee82c1e0)](https://app.codacy.com/gl/bot-by/ijhttp-maven-plugin/dashboard?utm_source=gl&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-[![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/73e1f8501ed84b0580dcf7ccee82c1e0)](https://app.codacy.com/gl/bot-by/ijhttp-maven-plugin/dashboard?utm_source=gl&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5bd5f31b51114de7b29663d2bf000aaa)](https://app.codacy.com/gh/vitalijr2/ijhttp-tools/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/5bd5f31b51114de7b29663d2bf000aaa)](https://app.codacy.com/gh/vitalijr2/ijhttp-tools/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
 [![Java Version](https://img.shields.io/static/v1?label=java&message=17&color=blue&logo=java&logoColor=E23D28)](https://www.oracle.com/java/technologies/downloads/#java17)
 
 ## Table of Contents
@@ -127,6 +127,7 @@ to initialise and configure both executor and command line builder.
 Example of full configuration:
 
 ```java
+
 @SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
 @AutoConfigureHttpClientCommandLine(timeout = 7000)
 class HttpClientCommandLineApplicationTests {
@@ -160,6 +161,7 @@ or combine both ways.
 Example of autoconfiguration, full configuration:
 
 ```yaml
+
 ijhttp:
   parameters:
     connect-timeout: 9000
@@ -231,7 +233,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-[Apache License v2.0](LICENSE)  
+[Apache License v2.0](LICENSE)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 [http-client]: https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html
