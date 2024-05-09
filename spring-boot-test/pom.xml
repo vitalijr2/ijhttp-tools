@@ -189,6 +189,6 @@
     </profile>
   </profiles>
   <properties>
-    <spring-boot.version>3.2.3</spring-boot.version>
+    <spring-boot.version>3.2.4</spring-boot.version>
   </properties>
 </project>
