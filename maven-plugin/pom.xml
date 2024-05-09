@@ -66,6 +66,13 @@
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Automatic-Module-Name>ijhttp_tools.maven_plugin</Automatic-Module-Name>
+            </manifestEntries>
+          </archive>
+        </configuration>
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>
@@ -184,7 +191,7 @@
     </profile>
   </profiles>
   <properties>
-    <plugin-annotations.version>3.11.0</plugin-annotations.version>
+    <plugin-annotations.version>3.13.0</plugin-annotations.version>
     <plugin-api.version>3.9.6</plugin-api.version>
   </properties>
   <version>${revision}${changelist}${sha1}</version>

@@ -3,10 +3,11 @@
 [![Maven Central](https://img.shields.io/maven-central/v/io.gitlab.vitalijr2.ijhttp-tools/ijhttp-command-line)](https://search.maven.org/artifact/io.gitlab.vitalijr2.ijhttp-tools/ijhttp-command-line)
 [![Javadoc](https://javadoc.io/badge2/io.gitlab.vitalijr2.ijhttp-tools/ijhttp-command-line/javadoc.svg)](https://javadoc.io/doc/io.gitlab.vitalijr2.ijhttp-tools/ijhttp-command-line)
 
-The builder-style component [HttpClientCommandLine][component] helps to prepare command line
-to run [Intellij HTTP Client CLI tool][cli-tool].
+The builder-style component [HttpClientCommandLine][component] helps
+to prepare command line to run [Intellij HTTP Client CLI tool][cli-tool].
 
 The minimal configuration contains HTTP files only:
+
 ```java
 var commandLine = new HttpClientCommandLine();
 var executor = new DefaultExecutor();
@@ -14,8 +15,12 @@ var orders = Path.of("orders/orders.http");
 var products = Path.of("catalog/products.http");
 var checkout = Path.of("orders/checkout.http");
 
-commandLine.files(orders, products, checkout);
-executor.execute(commandLine.getCommandLine());
+commandLine.
+
+files(orders, products, checkout);
+executor.
+
+execute(commandLine.getCommandLine());
 ```
 
 ## Directories
@@ -24,6 +29,7 @@ executor.execute(commandLine.getCommandLine());
 With **HTTP Client Command Line** you can set directories that contain such files.
 
 The same example as above but with directories looks like:
+
 ```java
 var commandLine = new HttpClientCommandLine();
 var executor = new DefaultExecutor();

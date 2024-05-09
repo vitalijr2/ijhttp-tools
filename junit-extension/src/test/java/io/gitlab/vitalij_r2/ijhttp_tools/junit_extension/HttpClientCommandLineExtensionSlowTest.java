@@ -13,6 +13,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
+import io.gitlab.vitalij_r2.ijhttp_tools.command_line.HttpClientCommandLine;
 import java.lang.reflect.AnnotatedElement;
 import java.lang.reflect.Parameter;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,7 +25,6 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import io.gitlab.vitalij_r2.ijhttp_tools.command_line.HttpClientCommandLine;
 
 @Tag("slow")
 @ExtendWith(MockitoExtension.class)

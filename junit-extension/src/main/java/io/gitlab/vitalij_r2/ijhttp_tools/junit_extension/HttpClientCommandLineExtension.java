@@ -15,6 +15,8 @@
  */
 package io.gitlab.vitalij_r2.ijhttp_tools.junit_extension;
 
+import io.gitlab.vitalij_r2.ijhttp_tools.command_line.HttpClientCommandLine;
+import io.gitlab.vitalij_r2.ijhttp_tools.command_line.LogLevel;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Stream;
@@ -24,12 +26,11 @@ import org.junit.jupiter.api.extension.ParameterResolutionException;
 import org.junit.jupiter.api.extension.ParameterResolver;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
-import io.gitlab.vitalij_r2.ijhttp_tools.command_line.HttpClientCommandLine;
-import io.gitlab.vitalij_r2.ijhttp_tools.command_line.LogLevel;
 
-class HttpClientCommandLineExtension implements ParameterResolver {
+public class HttpClientCommandLineExtension implements ParameterResolver {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(HttpClientCommandLineExtension.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(
+      HttpClientCommandLineExtension.class);
 
   private static void copyBooleanParametersAndLogLevelAndExecutable(
       HttpClientCommandLineParameters parameters, HttpClientCommandLine httpClientCommandLine) {
@@ -107,19 +108,19 @@ class HttpClientCommandLineExtension implements ParameterResolver {
   }
 
   @Override
-  public boolean supportsParameter(ParameterContext parameterContext,
-      ExtensionContext extensionContext) throws ParameterResolutionException {
-    return HttpClientCommandLine.class == parameterContext.getParameter().getType()
-        && parameterContext.isAnnotated(HttpClientCommandLineParameters.class);
-  }
-
-  @Override
   public Object resolveParameter(ParameterContext parameterContext,
       ExtensionContext extensionContext) throws ParameterResolutionException {
     var parameters = parameterContext.getAnnotatedElement()
         .getAnnotation(HttpClientCommandLineParameters.class);
 
     return httpClientCommandLine(parameters);
+  }
+
+  @Override
+  public boolean supportsParameter(ParameterContext parameterContext,
+      ExtensionContext extensionContext) throws ParameterResolutionException {
+    return HttpClientCommandLine.class.isAssignableFrom(parameterContext.getParameter().getType())
+        && parameterContext.isAnnotated(HttpClientCommandLineParameters.class);
   }
 
 }

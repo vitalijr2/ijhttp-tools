@@ -29,16 +29,13 @@ import org.junit.jupiter.api.extension.ParameterResolver;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
 
-class HttpClientExecutorExtension implements ParameterResolver {
+public class HttpClientExecutorExtension implements ParameterResolver {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(
       HttpClientCommandLineExtension.class);
 
-  @Override
-  public boolean supportsParameter(ParameterContext parameterContext,
-      ExtensionContext extensionContext) throws ParameterResolutionException {
-    return Executor.class == parameterContext.getParameter().getType()
-        && parameterContext.isAnnotated(HttpClientExecutor.class);
+  private static DefaultExecutor getExecutor() {
+    return DefaultExecutor.builder().get();
   }
 
   @Override
@@ -57,8 +54,11 @@ class HttpClientExecutorExtension implements ParameterResolver {
     return executor;
   }
 
-  private static DefaultExecutor getExecutor() {
-    return DefaultExecutor.builder().get();
+  @Override
+  public boolean supportsParameter(ParameterContext parameterContext,
+      ExtensionContext extensionContext) throws ParameterResolutionException {
+    return Executor.class.isAssignableFrom(parameterContext.getParameter().getType())
+        && parameterContext.isAnnotated(HttpClientExecutor.class);
   }
 
   @VisibleForTesting

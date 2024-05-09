@@ -1,0 +1,44 @@
+name: Feature request
+description: Suggest an idea for this project
+labels:
+  - enhancement
+assignees: [ "vitalijr2" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request!
+
+        **Before opening a new issue**, make sure to search for keywords in the issues
+        filtered by the "enhancement" and "suggestion" labels:
+
+        * https://github.com/vitalijr2/ijhttp-tools/issues?q=is%3Aissue+label%3Aenhancement+
+        * https://github.com/vitalijr2/ijhttp-tools/issues?q=is%3Aissue+label%3Asuggestion+
+
+        and verify the issue you're about to submit isn't a duplicate.
+  - type: input
+    id: summary
+    validations:
+      required: true
+    attributes:
+      label: Summary
+      description: A clear and concise description of what the bug is.
+  - type: textarea
+    id: expected
+    validations:
+      required: true
+    attributes:
+      label: What is the expected correct behavior?
+      description: Describe what you should see instead.
+      placeholder: Tell us what you expected to get!
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Possible implementations
+      description: If you can, link to the line of code that might be responsible for the feature.
+  - type: markdown
+    attributes:
+      value: |
+        Paste any relevant logs - please use code blocks (```)
+        to format console output, logs, and code as it's tough
+        to read otherwise.

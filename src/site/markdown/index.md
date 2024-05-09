@@ -1,8 +1,11 @@
 # Maven plugin, Spring Boot Test autoconfiguration and jUnit Extension for IntelliJ HTTP Client
 
-I had started with a Maven plugin to run HTTP requests on the <em>integration-test</em> phase
-using the [IntelliJ HTTP Client][http-client]. Later I added a Spring Boot Test autoconfiguration,
-thanks [@GoncaloPT][GoncaloPT] for [his idea][leverage-test]. Next step was jUnit Extension.
+I had started with a Maven plugin to run HTTP requests
+on the _integration-test_ phase
+using the [IntelliJ HTTP Client][http-client].
+Later I added a Spring Boot Test autoconfiguration,
+thanks [@GoncaloPT][GoncaloPT] for [his idea][leverage-test].
+Next step was jUnit Extension.
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/73e1f8501ed84b0580dcf7ccee82c1e0)](https://app.codacy.com/gl/bot-by/ijhttp-maven-plugin/dashboard?utm_source=gl&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/73e1f8501ed84b0580dcf7ccee82c1e0)](https://app.codacy.com/gl/bot-by/ijhttp-maven-plugin/dashboard?utm_source=gl&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
@@ -10,12 +13,13 @@ thanks [@GoncaloPT][GoncaloPT] for [his idea][leverage-test]. Next step was jUni
 
 ## Getting started
 
-Originally the IntelliJ HTTP Client plugin allows to create, edit, and execute HTTP requests
-directly in the IntelliJ IDEA code editor.
+Originally the IntelliJ HTTP Client plugin allows to create, edit,
+and execute HTTP requests directly in the IntelliJ IDEA code editor.
 The IntelliJ HTTP Client is also [available as a CLI tool][cli-tool].
 
-The Maven plugin and jUnit Extension allows to run HTTP requests on the <em>integration-test</em> phase
-using the IntelliJ HTTP Client. The Spring Boot Test autoconfiguration allows to run them with
+The Maven plugin and jUnit Extension allows to run HTTP requests
+on the _integration-test_ phase using the IntelliJ HTTP Client.
+The Spring Boot Test autoconfiguration allows to run them with
 Spring Boot Test, you don't need to package and run whole application.
 
 The [HTTP Request in Editor Specification][specification]
@@ -42,7 +46,8 @@ Content-Type: application/json
 ### Directories (extra feature)
 
 **IntelliJ HTTP Client** needs HTTP files to work.
-With **HTTP Client Command Line** you can set directories that contain such files.
+With **HTTP Client Command Line** you can set directories
+that contain such files.
 
 ## Usage
 

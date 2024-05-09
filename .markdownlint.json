@@ -1,0 +1,12 @@
+{
+  "line-length": {
+    "headings": false,
+    "line_length": 80,
+    "code_blocks": false,
+    "tables": false
+  },
+  "no-duplicate-heading": {
+    "siblings_only": true
+  },
+  "required-headings": false
+}
