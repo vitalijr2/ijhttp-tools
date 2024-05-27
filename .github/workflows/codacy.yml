@@ -42,7 +42,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@3ff8e64eb4b714c4bee91b7b4eea31c6fc2c4f93
+        uses: codacy/codacy-analysis-cli-action@v4.4.1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           verbose: true
@@ -67,7 +67,7 @@ jobs:
           name: tests-and-target
           path: .
       - name: Run codacy-coverage-reporter
-        uses: codacy/codacy-coverage-reporter-action@v1
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
         with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: command-line/target/site/jacoco/jacoco.xml,maven-plugin/target/site/jacoco/jacoco.xml,spring-boot-test/target/site/jacoco/jacoco.xml
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
