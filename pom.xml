@@ -513,7 +513,7 @@
                 </reports>
               </reportSet>
             </reportSets>
-            <version>3.5.0</version>
+            <version>3.6.1</version>
           </plugin>
         </plugins>
       </reporting>
