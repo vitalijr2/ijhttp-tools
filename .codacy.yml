@@ -1,0 +1,5 @@
+---
+exclude_paths:
+  - "**/ijhttp-tools.css"
+  - "**/prism.css"
+  - "**/prism.js"
