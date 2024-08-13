@@ -31,7 +31,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @SuppressWarnings("PMD.NoPackage")
 public final class MavenWrapperDownloader {
-    private static final String WRAPPER_VERSION = "3.3.1";
+    private static final String WRAPPER_VERSION = "3.3.2";
 
     private static final boolean VERBOSE = Boolean.parseBoolean(System.getenv("MVNW_VERBOSE"));
 
