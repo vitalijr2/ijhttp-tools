@@ -319,7 +319,7 @@
         <artifactId>hamcrest</artifactId>
         <groupId>org.hamcrest</groupId>
         <scope>test</scope>
-        <version>2.2</version>
+        <version>3.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
