@@ -191,7 +191,7 @@
     </profile>
   </profiles>
   <properties>
-    <plugin-annotations.version>3.13.1</plugin-annotations.version>
+    <plugin-annotations.version>3.14.0</plugin-annotations.version>
     <plugin-api.version>3.9.8</plugin-api.version>
   </properties>
   <version>${revision}${changelist}${sha1}</version>
