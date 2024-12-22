@@ -10,7 +10,6 @@
  * href="https://gitlab.com/vitalijr2/ijhttp-tools/-/tree/main/junit-extension">ijhttp-junit-extension</a>
  * to run HTTP requests by using the IntelliJ HTTP Client.
  *
- * @author Vitalij Berdinskih
  * @since 1.0.0
  */
 package io.gitlab.vitalij_r2.ijhttp_tools.command_line;

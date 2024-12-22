@@ -48,7 +48,6 @@ import org.jetbrains.annotations.NotNull;
  * value. The component implements it by two methods: {@link #report(boolean)} and
  * {@link #reportPath(Path)}.
  *
- * @author Vitalij Berdinskih
  * @since 1.1.0
  */
 public class HttpClientCommandLine {
@@ -94,6 +93,8 @@ public class HttpClientCommandLine {
 
   /**
    * Number of milliseconds for connection. Defaults to <em>3000</em>.
+   *
+   * @param connectTimeout timeout, milliseconds
    */
   public void connectTimeout(@NotNull Integer connectTimeout) {
     this.connectTimeout = connectTimeout;
@@ -102,6 +103,7 @@ public class HttpClientCommandLine {
   /**
    * Directories to look up HTTP files. At least one {@code file} or {@code directory} is required.
    *
+   * @param directories directories to look up HTTP files
    * @see #files(Path...)
    * @since 1.2.0
    */
@@ -112,6 +114,8 @@ public class HttpClientCommandLine {
   /**
    * Enables Docker mode. Treat {@code localhost} as {@code host.docker.internal}. Defaults to
    * <em>false</em>.
+   *
+   * @param dockerMode enable if the HTTP client runs inside Docker
    */
   public void dockerMode(boolean dockerMode) {
     this.dockerMode = dockerMode;
@@ -119,6 +123,8 @@ public class HttpClientCommandLine {
 
   /**
    * Name of the public environment file, e.g. {@code http-client.env.json}.
+   *
+   * @param environmentFile path to the public environment file
    */
   public void environmentFile(@NotNull Path environmentFile) {
     this.environmentFile = environmentFile;
@@ -126,6 +132,8 @@ public class HttpClientCommandLine {
 
   /**
    * Public environment variable.
+   *
+   * @param environmentVariable environment variable
    */
   public void environmentVariable(@NotNull String environmentVariable) {
     synchronized (this) {
@@ -138,6 +146,8 @@ public class HttpClientCommandLine {
 
   /**
    * Public environment variables.
+   *
+   * @param environmentVariables list of environment variables
    */
   public void environmentVariables(@NotNull List<String> environmentVariables) {
     this.environmentVariables = environmentVariables;
@@ -145,6 +155,8 @@ public class HttpClientCommandLine {
 
   /**
    * Name of the environment in a configuration file.
+   *
+   * @param environmentName environment name
    */
   public void environmentName(@NotNull String environmentName) {
     this.environmentName = environmentName;
@@ -152,6 +164,8 @@ public class HttpClientCommandLine {
 
   /**
    * The executable. Can be a full path or the name of the executable. Defaults to {@code ijhttp}.
+   *
+   * @param executable path to {@code ijhttp} executable
    */
   public void executable(@NotNull String executable) {
     this.executable = executable;
@@ -160,6 +174,7 @@ public class HttpClientCommandLine {
   /**
    * HTTP file paths. At least one {@code file} or {@code directory} is required.
    *
+   * @param files path to the HTTP files
    * @see #directories(Path...)
    */
   public void files(Path... files) {
@@ -168,6 +183,8 @@ public class HttpClientCommandLine {
 
   /**
    * Allow insecure SSL connection. Defaults to <em>false</em>.
+   *
+   * @param insecure set {@code true} to allow insecure SSL connections
    */
   public void insecure(boolean insecure) {
     this.insecure = insecure;
@@ -175,6 +192,8 @@ public class HttpClientCommandLine {
 
   /**
    * Logging level: BASIC, HEADERS, VERBOSE. Defaults to <em>BASIC</em>.
+   *
+   * @param logLevel logging level
    */
   public void logLevel(@NotNull LogLevel logLevel) {
     this.logLevel = logLevel;
@@ -182,6 +201,8 @@ public class HttpClientCommandLine {
 
   /**
    * The maximum depth of a directory tree to traverse. Default value {@link Integer#MAX_VALUE}.
+   *
+   * @param maxDepth maximum depth
    */
   public void maxDepth(int maxDepth) {
     this.maxDepth = maxDepth;
@@ -189,6 +210,8 @@ public class HttpClientCommandLine {
 
   /**
    * Name of the private environment file, e.g. {@code http-client.private.env.json}.
+   *
+   * @param privateEnvironmentFile path to the private environment file
    */
   public void privateEnvironmentFile(@NotNull Path privateEnvironmentFile) {
     this.privateEnvironmentFile = privateEnvironmentFile;
@@ -196,6 +219,8 @@ public class HttpClientCommandLine {
 
   /**
    * Private environment variable.
+   *
+   * @param privateEnvironmentVariable private environment variable
    */
   public void privateEnvironmentVariable(@NotNull String privateEnvironmentVariable) {
     synchronized (this) {
@@ -209,6 +234,7 @@ public class HttpClientCommandLine {
   /**
    * Private environment variables.
    *
+   * @param privateEnvironmentVariables list of private environment variables
    * @see #environmentVariables
    */
   public void privateEnvironmentVariables(@NotNull List<String> privateEnvironmentVariables) {
@@ -218,8 +244,10 @@ public class HttpClientCommandLine {
   /**
    * Proxy URI.
    * <p>
-   * Proxy setting in format {@code scheme://login:password@host:port}, <em>scheme<em> can be
-   * <em>socks<em> for SOCKS or <em>http<em> for HTTP.
+   * Proxy setting in format {@code scheme://login:password@host:port}, <em>scheme</em> can be
+   * <em>socks</em> for SOCKS or <em>http</em> for HTTP.
+   *
+   * @param proxy proxy URL
    */
   public void proxy(@NotNull String proxy) {
     this.proxy = proxy;
@@ -228,6 +256,7 @@ public class HttpClientCommandLine {
   /**
    * Creates report about execution in JUnit XML Format. Defaults to <em>false</em>.
    *
+   * @param report set {@code true} to generate reports
    * @see #reportPath(Path)
    */
   public void report(boolean report) {
@@ -237,6 +266,7 @@ public class HttpClientCommandLine {
   /**
    * Path to a report folder. Default value {@code reports } in the current directory.
    *
+   * @param reportPath path to report folder
    * @see #report(boolean)
    */
   public void reportPath(@NotNull Path reportPath) {
@@ -245,6 +275,8 @@ public class HttpClientCommandLine {
 
   /**
    * Number of milliseconds for socket read. Defaults to <em>10000</em>.
+   *
+   * @param socketTimeout timeout, milliseconds
    */
   public void socketTimeout(@NotNull Integer socketTimeout) {
     this.socketTimeout = socketTimeout;
@@ -279,7 +311,7 @@ public class HttpClientCommandLine {
     return commandLine;
   }
 
-  private void environment(CommandLine commandLine) throws IOException {
+  private void environment(CommandLine commandLine) {
     if (nonNull(environmentFile)) {
       commandLine.addArgument(ENV_FILE).addArgument(environmentFile.toString());
     }
@@ -295,7 +327,7 @@ public class HttpClientCommandLine {
     }
   }
 
-  private void flags(CommandLine commandLine) throws IOException {
+  private void flags(CommandLine commandLine) {
     if (dockerMode) {
       commandLine.addArgument(DOCKER_MODE);
     }
@@ -315,7 +347,7 @@ public class HttpClientCommandLine {
     }
   }
 
-  private void privateEnvironment(CommandLine commandLine) throws IOException {
+  private void privateEnvironment(CommandLine commandLine) {
     if (nonNull(privateEnvironmentFile)) {
       commandLine.addArgument(PRIVATE_ENV_FILE).addArgument(privateEnvironmentFile.toString());
     }
@@ -331,7 +363,7 @@ public class HttpClientCommandLine {
     }
   }
 
-  private void report(CommandLine commandLine) throws IOException {
+  private void report(CommandLine commandLine) {
     if (report) {
       commandLine.addArgument(REPORT);
       if (nonNull(reportPath)) {

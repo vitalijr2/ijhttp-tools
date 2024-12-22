@@ -24,7 +24,6 @@
  * The <a href="https://gitlab.com/vitalijr2/ijhttp-demo">IntelliJ HTTP Client Demo</a> has some
  * examples how to download the HTTP client.
  *
- * @author Vitalij Berdinskih
  * @see <a href="https://www.youtube.com/live/mwiHAukbWjM?feature=share">Live stream: The New HTTP
  * Client CLI</a>
  * @since 1.1.0

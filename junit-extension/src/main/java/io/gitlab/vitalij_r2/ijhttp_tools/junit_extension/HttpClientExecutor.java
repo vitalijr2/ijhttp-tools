@@ -26,7 +26,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 /**
  * HTTP Client Executor.
  *
- * @author Vitalij Berdinskih
  * @since 1.3.0
  */
 @Target({ElementType.FIELD, ElementType.PARAMETER})

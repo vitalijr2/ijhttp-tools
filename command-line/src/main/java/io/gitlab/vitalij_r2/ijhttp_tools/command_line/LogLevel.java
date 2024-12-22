@@ -18,7 +18,6 @@ package io.gitlab.vitalij_r2.ijhttp_tools.command_line;
 /**
  * Logging levels.
  *
- * @author Vitalij Berdinskih
  * @since 1.1.0
  */
 public enum LogLevel {

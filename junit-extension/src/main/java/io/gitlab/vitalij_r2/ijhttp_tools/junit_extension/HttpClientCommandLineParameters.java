@@ -26,7 +26,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 /**
  * HTTP Client parameters.
  *
- * @author Vitalij Berdinskih
  * @see <a href="https://www.jetbrains.com/help/idea/http-client-cli.html">HTTP Client CLI</a>
  * @since 1.3.0
  */

@@ -75,7 +75,6 @@ import io.gitlab.vitalij_r2.ijhttp_tools.command_line.LogLevel;
  * To manage plugin's output use {@link #useMavenLogger}, {@link #quietLogs} and
  * {@link #outputFile}.
  *
- * @author Vitalij Berdinskih
  * @see <a href="https://www.jetbrains.com/help/idea/http-client-cli.html">HTTP Client CLI</a>
  * @since 1.0.0
  */

@@ -36,7 +36,6 @@ import io.gitlab.vitalij_r2.ijhttp_tools.command_line.HttpClientCommandLine;
  * HTTP Client configuration provides {@linkplain org.apache.commons.exec.Executor executor} and
  * {@linkplain io.gitlab.vitalij_r2.ijhttp_tools.command_line.HttpClientCommandLine command line} beans.
  *
- * @author Vitalij Berdinskih
  * @since 1.1.0
  */
 @ConditionalOnWebApplication(type = Type.SERVLET)

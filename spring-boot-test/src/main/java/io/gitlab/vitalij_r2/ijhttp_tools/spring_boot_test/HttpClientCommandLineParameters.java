@@ -24,7 +24,6 @@ import io.gitlab.vitalij_r2.ijhttp_tools.command_line.LogLevel;
 /**
  * HTTP Client parameters.
  *
- * @author Vitalij Berdinskih
  * @see <a href="https://www.jetbrains.com/help/idea/http-client-cli.html">HTTP Client CLI</a>
  * @since 1.1.0
  */

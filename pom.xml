@@ -388,11 +388,11 @@
                 <configuration>
                   <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
                   <excludeTransitiveDependencies>true</excludeTransitiveDependencies>
+                  <excludedGroups>io\.github\.vitalijr2\.logging</excludedGroups>
                   <excludedScopes>test</excludedScopes>
                   <excludes>
                     <exclude>**/package-info.java</exclude>
                   </excludes>
-                  <excludedGroups>io\.github\.vitalijr2\.logging</excludedGroups>
                   <inceptionYear>${project.inceptionYear}</inceptionYear>
                   <!-- @formatter:off -->
                   <licenseMerges>
