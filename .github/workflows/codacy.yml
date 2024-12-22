@@ -3,6 +3,8 @@ name: "Codacy"
 on:
   push:
     branches: [ "**" ]
+    tags-ignore:
+      - v*
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ "**" ]
@@ -24,9 +26,9 @@ jobs:
       - name: Build with Maven
         run: ./mvnw --batch-mode
       - name: Temporarily save target and test requests
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v4
         with:
-          name: tests-and-target
+          name: targets
           path: |
             command-line/target
             junit-extension/target
@@ -64,7 +66,7 @@ jobs:
       - name: Retrieve saved test requests and target
         uses: actions/download-artifact@master
         with:
-          name: tests-and-target
+          name: targets
           path: .
       - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@a38818475bb21847788496e9f0fddaa4e84955ba

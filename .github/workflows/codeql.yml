@@ -3,9 +3,13 @@ name: "CodeQL"
 on:
   push:
     branches: [ "**" ]
+    tags-ignore:
+      - v*
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ "**" ]
+
+permissions: read-all
 
 jobs:
   analyze:
@@ -13,16 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
-      actions: read
-      contents: read
-      packages: read
       security-events: write
     strategy:
       fail-fast: false
       matrix:
         include:
           - language: java-kotlin
-            build-mode: none # This mode only analyzes Java. Set this to 'autobuild' or 'manual' to analyze Kotlin too.
+            build-mode: manual
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -36,6 +37,8 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
+    - name: Build with Maven
+      run: ./mvnw --batch-mode
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:

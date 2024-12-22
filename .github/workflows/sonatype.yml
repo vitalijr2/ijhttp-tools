@@ -4,14 +4,13 @@ on:
   release:
     types: [ created ]
 
+permissions: read-all
+
 jobs:
   publish:
     name: Publish to Maven Central
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    permissions:
-      actions: read
-      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
