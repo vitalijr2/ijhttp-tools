@@ -1,19 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Copyright 2023-2024 Vitalij Berdinskih
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      https://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
--->
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -21,15 +6,15 @@
   <build>
     <plugins>
       <plugin>
-        <artifactId>maven-clean-plugin</artifactId>
-        <groupId>org.apache.maven.plugins</groupId>
-      </plugin>
-      <plugin>
         <artifactId>flatten-maven-plugin</artifactId>
         <groupId>org.codehaus.mojo</groupId>
       </plugin>
       <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <groupId>org.jacoco</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>
@@ -37,7 +22,7 @@
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
+        <artifactId>maven-failsafe-plugin</artifactId>
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>
@@ -45,19 +30,19 @@
         <configuration>
           <archive>
             <manifestEntries>
-              <Automatic-Module-Name>ijhttp_tools.junit_extension</Automatic-Module-Name>
+              <Automatic-Module-Name>io.github.vitalijr2.ijhttptools.junitextension</Automatic-Module-Name>
             </manifestEntries>
           </archive>
         </configuration>
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>
-        <artifactId>maven-failsafe-plugin</artifactId>
+        <artifactId>maven-resources-plugin</artifactId>
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <groupId>org.jacoco</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
       </plugin>
     </plugins>
   </build>
@@ -65,12 +50,7 @@
     <dependency>
       <artifactId>ijhttp-command-line</artifactId>
       <groupId>io.gitlab.vitalijr2.ijhttp-tools</groupId>
-      <version>${revision}${changelist}${sha1}</version>
-    </dependency>
-    <dependency>
-      <artifactId>junit-jupiter-api</artifactId>
-      <groupId>org.junit.jupiter</groupId>
-      <scope>compile</scope>
+      <version>1.3.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <artifactId>annotations</artifactId>
@@ -80,7 +60,15 @@
       <artifactId>commons-exec</artifactId>
       <groupId>org.apache.commons</groupId>
     </dependency>
-    <!-- test -->
+    <dependency>
+      <artifactId>hamcrest</artifactId>
+      <groupId>org.hamcrest</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>junit-jupiter-api</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <artifactId>junit-jupiter-engine</artifactId>
       <groupId>org.junit.jupiter</groupId>
@@ -97,12 +85,9 @@
       <artifactId>mockito-junit-jupiter</artifactId>
       <groupId>org.mockito</groupId>
     </dependency>
-    <dependency>
-      <artifactId>hamcrest</artifactId>
-      <groupId>org.hamcrest</groupId>
-    </dependency>
   </dependencies>
-  <description>The jUnit Extension to run HTTP requests by using the IntelliJ HTTP Client.
+  <description>
+    The jUnit Extension to run HTTP requests by using the IntelliJ HTTP Client.
   </description>
   <modelVersion>4.0.0</modelVersion>
   <name>ijhttp tools : jUnit Extension</name>
@@ -110,7 +95,7 @@
   <parent>
     <artifactId>ijhttp-tools</artifactId>
     <groupId>io.gitlab.vitalijr2.ijhttp-tools</groupId>
-    <version>${revision}${changelist}${sha1}</version>
+    <version>1.3.0-SNAPSHOT</version>
   </parent>
   <profiles>
     <profile>
@@ -132,10 +117,10 @@
             <configuration>
               <links>
                 <link>
-                  https://javadoc.io/doc/org.apache.commons/commons-exec/${commons-exec.version}
+                  https://javadoc.io/doc/org.jetbrains/annotations/${jetbrains-annotations.version}
                 </link>
                 <link>
-                  https://javadoc.io/doc/org.jetbrains/annotations/${jetbrains-annotations.version}
+                  https://javadoc.io/doc/org.apache.commons/commons-exec/${commons-exec.version}
                 </link>
               </links>
             </configuration>
@@ -143,7 +128,7 @@
           </plugin>
         </plugins>
       </build>
-      <id>javadocs</id>
+      <id>release</id>
     </profile>
   </profiles>
 </project>

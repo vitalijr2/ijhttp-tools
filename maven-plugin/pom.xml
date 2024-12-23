@@ -69,7 +69,7 @@
         <configuration>
           <archive>
             <manifestEntries>
-              <Automatic-Module-Name>ijhttp_tools.maven_plugin</Automatic-Module-Name>
+              <Automatic-Module-Name>io.github.vitalijr2.ijhttptools.mavenplugin</Automatic-Module-Name>
             </manifestEntries>
           </archive>
         </configuration>
@@ -94,7 +94,7 @@
     <dependency>
       <artifactId>ijhttp-command-line</artifactId>
       <groupId>io.gitlab.vitalijr2.ijhttp-tools</groupId>
-      <version>${revision}${changelist}${sha1}</version>
+      <version>1.3.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <artifactId>maven-plugin-api</artifactId>
@@ -151,7 +151,7 @@
   <parent>
     <artifactId>ijhttp-tools</artifactId>
     <groupId>io.gitlab.vitalijr2.ijhttp-tools</groupId>
-    <version>${revision}${changelist}${sha1}</version>
+    <version>1.3.0-SNAPSHOT</version>
   </parent>
   <prerequisites>
     <maven>${maven-minimal.version}</maven>
@@ -191,8 +191,7 @@
     </profile>
   </profiles>
   <properties>
-    <plugin-annotations.version>3.13.1</plugin-annotations.version>
-    <plugin-api.version>3.9.8</plugin-api.version>
+    <plugin-annotations.version>3.15.1</plugin-annotations.version>
+    <plugin-api.version>3.9.9</plugin-api.version>
   </properties>
-  <version>${revision}${changelist}${sha1}</version>
 </project>

@@ -40,6 +40,6 @@ commandLine.directories(orders, catalog);
 executor.execute(commandLine.getCommandLine());
 ```
 
-[component]: src/main/java/io/gitlab/vitalij_r2/ijhttp_tools/command_line/HttpClientCommandLine.java
+[component]: src/main/java/io/gitlab/vitalijr2/ijhttptools/cli/HttpClientCommandLine.java
 
 [cli-tool]: https://www.jetbrains.com/help/idea/http-client-cli.html
