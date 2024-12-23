@@ -17,6 +17,7 @@ package io.gitlab.vitalijr2.ijhttptools.junitextension;
 
 import io.gitlab.vitalijr2.ijhttptools.cli.HttpClientCommandLine;
 import io.gitlab.vitalijr2.ijhttptools.cli.LogLevel;
+import java.lang.System.Logger.Level;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Stream;
@@ -26,9 +27,6 @@ import org.junit.jupiter.api.extension.ParameterResolutionException;
 import org.junit.jupiter.api.extension.ParameterResolver;
 
 public class HttpClientCommandLineExtension implements ParameterResolver {
-
-  private static final Logger LOGGER = LoggerFactory.getLogger(
-      HttpClientCommandLineExtension.class);
 
   private static void copyBooleanParametersAndLogLevelAndExecutable(
       HttpClientCommandLineParameters parameters, HttpClientCommandLine httpClientCommandLine) {
@@ -92,7 +90,8 @@ public class HttpClientCommandLineExtension implements ParameterResolver {
 
   private static HttpClientCommandLine httpClientCommandLine(
       HttpClientCommandLineParameters parameters) {
-    LOGGER.debug(() -> String.format("HTTP Client parameters %s", parameters));
+    System.getLogger(HttpClientCommandLineExtension.class.getName())
+        .log(Level.DEBUG, () -> String.format("HTTP Client parameters %s", parameters));
 
     var httpClientCommandLine = new HttpClientCommandLine();
 
