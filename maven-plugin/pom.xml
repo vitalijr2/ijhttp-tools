@@ -66,6 +66,13 @@
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Automatic-Module-Name>io.github.vitalijr2.ijhttptools.mavenplugin</Automatic-Module-Name>
+            </manifestEntries>
+          </archive>
+        </configuration>
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>

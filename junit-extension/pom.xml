@@ -27,6 +27,13 @@
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Automatic-Module-Name>io.github.vitalijr2.ijhttptools.junitextension</Automatic-Module-Name>
+            </manifestEntries>
+          </archive>
+        </configuration>
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>
@@ -69,11 +76,6 @@
     <dependency>
       <artifactId>junit-jupiter-params</artifactId>
       <groupId>org.junit.jupiter</groupId>
-    </dependency>
-    <dependency>
-      <artifactId>junit-platform-commons</artifactId>
-      <groupId>org.junit.platform</groupId>
-      <version>${junit-platform.version}</version>
     </dependency>
     <dependency>
       <artifactId>mockito-core</artifactId>
@@ -120,9 +122,6 @@
                 <link>
                   https://javadoc.io/doc/org.apache.commons/commons-exec/${commons-exec.version}
                 </link>
-                <link>
-                  https://javadoc.io/doc/org.junit.platform/junit-platform-commons/${junit-platform.version}
-                </link>
               </links>
             </configuration>
             <groupId>org.apache.maven.plugins</groupId>
@@ -132,7 +131,4 @@
       <id>release</id>
     </profile>
   </profiles>
-  <properties>
-    <junit-platform.version>1.11.4</junit-platform.version>
-  </properties>
 </project>
