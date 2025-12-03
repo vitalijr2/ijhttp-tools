@@ -241,7 +241,7 @@
             </properties>
           </configuration>
           <groupId>org.apache.maven.plugins</groupId>
-          <version>3.5.2</version>
+          <version>3.5.4</version>
         </plugin>
         <plugin>
           <artifactId>sign-maven-plugin</artifactId>
