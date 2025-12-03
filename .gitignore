@@ -9,26 +9,37 @@ release.properties
 # GitHub actions
 results.sarif
 
-# Eclipse
-.project
-.classpath
-.settings/
-bin/
-
-# IntelliJ
+### IntelliJ IDEA ###
 .idea
 *.iml
 *.ipr
 *.iws
 
-# NetBeans
-nb-configuration.xml
-
-# Visual Studio Code
-.vscode
+### Eclipse ###
+.apt_generated
+.classpath
 .factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
 
-# OSX
+### NetBeans ###
+nb-configuration.xml
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode
+
+### Mac OS ###
 .DS_Store
 
 # Vim
