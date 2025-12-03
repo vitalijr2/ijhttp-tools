@@ -64,10 +64,6 @@
       <groupId>org.junit.jupiter</groupId>
     </dependency>
     <dependency>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <groupId>org.junit.jupiter</groupId>
-    </dependency>
-    <dependency>
       <artifactId>junit-jupiter-params</artifactId>
       <groupId>org.junit.jupiter</groupId>
     </dependency>
