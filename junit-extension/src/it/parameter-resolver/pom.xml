@@ -84,7 +84,7 @@
     <java.version>17</java.version>
     <junit-jupiter.version>5.10.1</junit-jupiter.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <undertow.version>2.3.17.Final</undertow.version>
+    <undertow.version>2.3.20.Final</undertow.version>
   </properties>
   <version>1.0-SNAPSHOT</version>
 </project>
