@@ -4,13 +4,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import io.gitlab.vitalijr2.ijhttptools.cli.LogLevel;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import io.gitlab.vitalijr2.ijhttptools.cli.LogLevel;
 
 @Tag("fast")
 class HttpClientCommandLineParametersTest {

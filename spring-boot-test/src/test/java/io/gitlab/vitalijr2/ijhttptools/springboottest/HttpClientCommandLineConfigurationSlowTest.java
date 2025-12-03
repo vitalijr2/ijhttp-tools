@@ -15,6 +15,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
+import io.gitlab.vitalijr2.ijhttptools.cli.LogLevel;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -25,7 +26,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import io.gitlab.vitalijr2.ijhttptools.cli.LogLevel;
 
 @Tag("slow")
 class HttpClientCommandLineConfigurationSlowTest {

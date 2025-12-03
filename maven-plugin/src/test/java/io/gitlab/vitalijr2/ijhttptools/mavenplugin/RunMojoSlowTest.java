@@ -13,6 +13,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import io.gitlab.vitalijr2.ijhttptools.cli.LogLevel;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -38,7 +39,6 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
-import io.gitlab.vitalijr2.ijhttptools.cli.LogLevel;
 
 @ExtendWith(MockitoExtension.class)
 @Tag("slow")

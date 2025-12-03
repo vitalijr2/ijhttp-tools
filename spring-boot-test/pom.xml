@@ -170,9 +170,12 @@
             <artifactId>maven-javadoc-plugin</artifactId>
             <configuration>
               <links>
+                <!--
+                FIXME: package-list issue
                 <link>
                   https://javadoc.io/doc/org.apache.commons/commons-exec/${commons-exec.version}
                 </link>
+                -->
                 <link>
                   https://javadoc.io/doc/org.springframework.boot/spring-boot-autoconfigure/${spring-boot.version}
                 </link>

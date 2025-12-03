@@ -409,7 +409,6 @@
                   <excludes>
                     <exclude>**/package-info.java</exclude>
                   </excludes>
-                  <inceptionYear>${project.inceptionYear}</inceptionYear>
                   <!-- @formatter:off -->
                   <licenseMerges>
                     <licenseMerge>Apache License version 2.0|The Apache Software License, Version 2.0|The Apache License, Version 2.0|Apache License, Version 2.0|Apache-2.0|Apache 2</licenseMerge>
@@ -502,7 +501,7 @@
     <javadoc-plugin.version>3.12.0</javadoc-plugin.version>
     <jetbrains-annotations.version>26.0.2-1</jetbrains-annotations.version>
     <junit.version>6.0.1</junit.version>
-    <maven-minimal.version>3.9.0</maven-minimal.version>
+    <maven-minimal.version>3.8.8</maven-minimal.version>
     <mockito.version>5.20.0</mockito.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>

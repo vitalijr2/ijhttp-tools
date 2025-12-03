@@ -7,12 +7,15 @@ Later I added a Spring Boot Test autoconfiguration,
 thanks [@GoncaloPT][GoncaloPT] for [his idea][leverage-test].
 Next step was jUnit Extension.
 
+In addition to the [GitLab page][gl-project], this project can also be found on [GitHub][gh-project].
+
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/5bd5f31b51114de7b29663d2bf000aaa)](https://app.codacy.com/gh/vitalijr2/ijhttp-tools/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/5bd5f31b51114de7b29663d2bf000aaa)](https://app.codacy.com/gh/vitalijr2/ijhttp-tools/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
 [![Java Version](https://img.shields.io/static/v1?label=java&message=17&color=blue&logo=java&logoColor=E23D28)](https://www.oracle.com/java/technologies/downloads/#java17)
 
 ## Table of Contents
 
+<!--ts-->
 * [Getting started](#getting-started)
   * [Directories (extra feature)](#directories-extra-feature)
 * [Usage](#usage)
@@ -23,7 +26,10 @@ Next step was jUnit Extension.
 * [History](#history)
 * [License](#license)
 
-Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
+<!-- Added by: r2, at: Thu Dec  4 12:06:11 AM EET 2025 -->
+
+<!--te-->
 
 ![Screenshot](screenshot.png)
 
@@ -219,28 +225,33 @@ See [Changelog](changelog.md)
 
 ## License
 
-Copyright 2023-2024 Vitalij Berdinskih
+```text
+Copyright (C) 2024 Vitalij Berdinskih
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-<https://www.apache.org/licenses/LICENSE-2.0>
+     https://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+```
 
-[Apache License v2.0](LICENSE)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
+See full text [here](LICENSE "the LICENSE file").
 
 [http-client]: https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html
 
 [GoncaloPT]: https://github.com/GoncaloPT
 
 [leverage-test]: https://github.com/bot-by/ijhttp-tools/issues/51 "Leverage test instead of using main app"
+
+[gl-project]: https://gitlab.com/vitalijr2/ijhttp-tools
+
+[gh-project]: https://github.com/vitalijr2/ijhttp-tools
 
 [cli-tool]: https://www.jetbrains.com/help/idea/http-client-cli.html
 
