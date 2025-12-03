@@ -21,15 +21,15 @@
   <build>
     <plugins>
       <plugin>
-        <artifactId>maven-clean-plugin</artifactId>
-        <groupId>org.apache.maven.plugins</groupId>
-      </plugin>
-      <plugin>
         <artifactId>flatten-maven-plugin</artifactId>
         <groupId>org.codehaus.mojo</groupId>
       </plugin>
       <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <groupId>org.jacoco</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>
@@ -46,7 +46,11 @@
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-failsafe-plugin</artifactId>
         <configuration>
           <classpathDependencyExcludes>
             <classpathDependencyExclude>ch.qos.logback:logback-classic</classpathDependencyExclude>
@@ -67,7 +71,11 @@
         <groupId>org.apache.maven.plugins</groupId>
       </plugin>
       <plugin>
-        <artifactId>maven-failsafe-plugin</artifactId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <classpathDependencyExcludes>
             <classpathDependencyExclude>ch.qos.logback:logback-classic</classpathDependencyExclude>
@@ -75,10 +83,6 @@
           </classpathDependencyExcludes>
         </configuration>
         <groupId>org.apache.maven.plugins</groupId>
-      </plugin>
-      <plugin>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <groupId>org.jacoco</groupId>
       </plugin>
     </plugins>
   </build>
@@ -111,10 +115,6 @@
     <!-- test -->
     <dependency>
       <artifactId>junit-jupiter-api</artifactId>
-      <groupId>org.junit.jupiter</groupId>
-    </dependency>
-    <dependency>
-      <artifactId>junit-jupiter-engine</artifactId>
       <groupId>org.junit.jupiter</groupId>
     </dependency>
     <dependency>
@@ -189,6 +189,6 @@
     </profile>
   </profiles>
   <properties>
-    <spring-boot.version>3.4.2</spring-boot.version>
+    <spring-boot.version>4.0.0</spring-boot.version>
   </properties>
 </project>

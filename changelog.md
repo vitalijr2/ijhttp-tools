@@ -11,9 +11,14 @@ and this project adheres to [Semantic Versioning][semver].
 
 - jUnit Extension
 
+### Changed
+
+- Move to Spring 4
+
 ### Updated
 
-- Update dependencies
+- Update to jUnit 6
+- Update many dependencies
 
 ## 1.2.1 - 2024-01-18
 

@@ -126,8 +126,21 @@
           <version>3.14.1</version>
         </plugin>
         <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <executions>
+            <execution>
+              <goals>
+                <goal>properties</goal>
+              </goals>
+            </execution>
+          </executions>
+          <groupId>org.apache.maven.plugins</groupId>
+          <version>3.9.0</version>
+        </plugin>
+        <plugin>
           <artifactId>maven-failsafe-plugin</artifactId>
           <configuration>
+            <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
             <forkCount>1</forkCount>
             <includes>
               <include>**/*Test.java</include>
@@ -236,12 +249,21 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <configuration>
+            <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
             <properties>
               <groups>fast</groups>
             </properties>
           </configuration>
           <groupId>org.apache.maven.plugins</groupId>
           <version>3.5.4</version>
+        </plugin>
+        <plugin>
+          <artifactId>semver-maven-plugin</artifactId>
+          <configuration>
+            <processModule>true</processModule>
+          </configuration>
+          <groupId>io.github.q3769</groupId>
+          <version>20240116.0.202508122232</version>
         </plugin>
         <plugin>
           <artifactId>sign-maven-plugin</artifactId>
@@ -317,12 +339,6 @@
         <version>${junit.version}</version>
       </dependency>
       <dependency>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <groupId>org.junit.jupiter</groupId>
-        <scope>test</scope>
-        <version>${junit.version}</version>
-      </dependency>
-      <dependency>
         <artifactId>junit-jupiter-params</artifactId>
         <groupId>org.junit.jupiter</groupId>
         <scope>test</scope>
@@ -339,11 +355,6 @@
         <groupId>org.mockito</groupId>
         <scope>test</scope>
         <version>${mockito.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.6.2</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -363,7 +374,7 @@
   <inceptionYear>2023</inceptionYear>
   <issueManagement>
     <system>GitLab</system>
-    <url>https://github.com/vitalijr2/ijhttp-tools/issues</url>
+    <url>https://gitlab.com/vitalijr2/ijhttp-tools/issues</url>
   </issueManagement>
   <licenses>
     <license>
@@ -411,7 +422,7 @@
                   <outputDirectory>${project.basedir}</outputDirectory>
                   <processEndTag>---------------LICENSE_END-------------------</processEndTag>
                   <processStartTag>---------------LICENSE_START-----------------</processStartTag>
-                  <projectName>Mock Loggers</projectName>
+                  <projectName>ijhttp tools</projectName>
                   <roots>
                     <root>src/main/java</root>
                   </roots>
@@ -426,6 +437,9 @@
           </plugin>
         </plugins>
       </build>
+      <!--
+       Update third-party license, check a release
+      -->
       <id>prepare-and-check</id>
     </profile>
     <profile>
