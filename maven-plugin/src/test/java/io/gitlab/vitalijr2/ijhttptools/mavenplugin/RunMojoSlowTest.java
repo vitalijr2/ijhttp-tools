@@ -83,7 +83,7 @@ class RunMojoSlowTest {
 
     var arguments = commandLineCaptor.getValue().getArguments();
 
-    assertThat("directories", arguments, arrayContaining(endsWith("bing.http")));
+    assertThat("directories", arguments, arrayContaining(endsWith("bing.rest")));
   }
 
   @DisplayName("Working directory: existed directory, non-existed directory")
