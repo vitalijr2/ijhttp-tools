@@ -226,7 +226,7 @@
             <propertiesEncoding>ISO-8859-1</propertiesEncoding>
           </configuration>
           <groupId>org.apache.maven.plugins</groupId>
-          <version>3.3.1</version>
+          <version>3.4.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-source-plugin</artifactId>
