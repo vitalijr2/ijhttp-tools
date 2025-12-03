@@ -10,7 +10,7 @@
         <plugin>
           <artifactId>central-publishing-maven-plugin</artifactId>
           <groupId>org.sonatype.central</groupId>
-          <version>0.6.0</version>
+          <version>0.7.0</version>
         </plugin>
         <plugin>
           <artifactId>flatten-maven-plugin</artifactId>
