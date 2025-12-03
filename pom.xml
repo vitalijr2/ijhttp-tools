@@ -481,7 +481,7 @@
     <commons-exec.version>1.6.0</commons-exec.version>
     <java.version>17</java.version>
     <javadoc-plugin.version>3.11.2</javadoc-plugin.version>
-    <jetbrains-annotations.version>26.0.2</jetbrains-annotations.version>
+    <jetbrains-annotations.version>26.0.2-1</jetbrains-annotations.version>
     <junit.version>5.11.4</junit.version>
     <maven-minimal.version>3.9.0</maven-minimal.version>
     <mockito.version>5.15.2</mockito.version>
