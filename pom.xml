@@ -340,6 +340,11 @@
         <scope>test</scope>
         <version>${mockito.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.6.2</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <description>
