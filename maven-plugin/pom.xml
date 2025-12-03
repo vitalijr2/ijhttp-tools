@@ -174,9 +174,12 @@
             <artifactId>maven-javadoc-plugin</artifactId>
             <configuration>
               <links>
+                <!--
+                FIXME: package-list issue
                 <link>
                   https://javadoc.io/doc/org.apache.maven/maven-plugin-api/${plugin-api.version}
                 </link>
+                -->
                 <link>
                   https://javadoc.io/doc/org.apache.maven.plugin-tools/maven-plugin-annotations/${plugin-annotations.version}
                 </link>

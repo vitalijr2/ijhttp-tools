@@ -3,6 +3,9 @@ engines:
   codenarc:
     exclude_paths:
       - "src/it/**"
+  spotbugs:
+    exclude_paths:
+      - "src/it/**"
 exclude_paths:
   - "**/ijhttp-tools.css"
   - "**/prism.css"
