@@ -14,8 +14,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 
 @Tag("fast")
 public class HttpClientCommandLineSmokeTest {
@@ -38,19 +36,17 @@ public class HttpClientCommandLineSmokeTest {
   }
 
   @DisplayName("Folder")
-  @ParameterizedTest(name = "{0}")
-  @CsvSource({"Folder,src/test/resources/folder,google.http",
-      "Subdirectory,src/test/resources/directory,bing.http"})
-  void folder(String name, String path, String filename) throws IOException {
+  @Test
+  void folder() throws IOException {
     // given
-    var folder = Paths.get(path);
+    var folder = Paths.get("src/test/resources/folder");
     builder.directories(folder);
 
     // when
     var commandLine = assertDoesNotThrow(builder::getCommandLine);
 
     // then
-    assertThat(commandLine.getArguments(), arrayContaining(endsWith(filename)));
+    assertThat(commandLine.getArguments(), arrayContaining(endsWith("google.http")));
   }
 
   @DisplayName("Directories")
@@ -67,24 +63,24 @@ public class HttpClientCommandLineSmokeTest {
 
     // then
     assertThat(commandLine.getArguments(),
-        arrayContainingInAnyOrder(endsWith("bing.http"), endsWith("google.http")));
+        arrayContainingInAnyOrder(endsWith("bing.rest"), endsWith("google.http"),
+            endsWith("testportal.http")));
   }
 
   @DisplayName("Max-depth")
   @Test
   void maxDepth() throws IOException {
     // given
-    var folder = Paths.get("src/test/resources/folder");
     var directoryWithSubdirectory = Paths.get("src/test/resources/directory");
 
-    builder.directories(folder, directoryWithSubdirectory);
+    builder.directories(directoryWithSubdirectory);
     builder.maxDepth(1);
 
     // when
     var commandLine = assertDoesNotThrow(builder::getCommandLine);
 
     // then
-    assertThat(commandLine.getArguments(), arrayContaining(endsWith("google.http")));
+    assertThat(commandLine.getArguments(), arrayContaining(endsWith("testportal.http")));
   }
 
 }
