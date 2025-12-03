@@ -478,7 +478,7 @@
     </profile>
   </profiles>
   <properties>
-    <commons-exec.version>1.4.0</commons-exec.version>
+    <commons-exec.version>1.6.0</commons-exec.version>
     <java.version>17</java.version>
     <javadoc-plugin.version>3.11.2</javadoc-plugin.version>
     <jetbrains-annotations.version>26.0.2</jetbrains-annotations.version>
