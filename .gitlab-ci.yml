@@ -101,7 +101,8 @@ deploy:publishing:
 sast:
   stage: test
   variables:
-    SAST_EXCLUDED_PATHS: command-line/src/it/**,junit-extension/src/it/**,maven-plugin/src/it/**,spring-boot-test/src/it/**
+    SAST_ANALYZER_IMAGE_TAG: 6
+    SAST_EXCLUDED_PATHS: src/it
 
 include:
   - template: Security/SAST.gitlab-ci.yml
