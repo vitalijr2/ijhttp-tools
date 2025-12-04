@@ -100,9 +100,11 @@ deploy:publishing:
 
 sast:
   stage: test
+
+spotbugs-sast:
   variables:
     SAST_ANALYZER_IMAGE_TAG: 6
-    SAST_EXCLUDED_PATHS: src/it
+    SAST_SPOTBUGS_EXCLUDED_BUILD_PATHS: src/it
 
 include:
   - template: Security/SAST.gitlab-ci.yml
