@@ -15,8 +15,6 @@ cache:
 variables:
   MAVEN_CLI_OPTS: >-
     -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository
-  SAST_ANALYZER_IMAGE_TAG: 6
-  SAST_EXCLUDED_PATHS: command-line/src/it, junit-extension/src/it, maven-plugin/src/it, spring-boot-test/src/it
 
 build:compile:
   stage: build
@@ -102,6 +100,9 @@ deploy:publishing:
 
 sast:
   stage: test
+  variables:
+    SAST_ANALYZER_IMAGE_TAG: 6
+    SAST_EXCLUDED_ANALYZERS: spotbugs
 
 include:
   - template: Security/SAST.gitlab-ci.yml
