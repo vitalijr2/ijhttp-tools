@@ -104,7 +104,7 @@ sast:
 spotbugs-sast:
   variables:
     SAST_ANALYZER_IMAGE_TAG: 6
-    SAST_SPOTBUGS_EXCLUDED_BUILD_PATHS: command-line/src/it, junit-extension/src/it, maven-plugin/src/it, spring-boot-test/src/it
+    SAST_EXCLUDED_PATHS: command-line/src/it, junit-extension/src/it, maven-plugin/src/it, spring-boot-test/src/it
 
 include:
   - template: Security/SAST.gitlab-ci.yml
