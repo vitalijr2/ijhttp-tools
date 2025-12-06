@@ -23,8 +23,9 @@ import io.gitlab.vitalijr2.ijhttptools.cli.HttpClientCommandLine;
 import io.gitlab.vitalijr2.ijhttptools.cli.LogLevel;
 import java.lang.System.Logger.Level;
 import java.nio.file.Path;
-import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolutionException;
@@ -50,14 +51,14 @@ public class HttpClientCommandLineExtension implements ParameterResolver {
       httpClientCommandLine.environmentName(parameters.environmentName());
     }
     if (0 < parameters.environmentVariables().length) {
-      httpClientCommandLine.environmentVariables(List.of(parameters.environmentVariables()));
+      httpClientCommandLine.environmentVariables(Set.of(parameters.environmentVariables()));
     }
     if (!parameters.privateEnvironmentFile().isEmpty()) {
       httpClientCommandLine.privateEnvironmentFile(Path.of(parameters.privateEnvironmentFile()));
     }
     if (0 < parameters.privateEnvironmentVariables().length) {
       httpClientCommandLine.privateEnvironmentVariables(
-          List.of(parameters.privateEnvironmentVariables()));
+          Set.of(parameters.privateEnvironmentVariables()));
     }
   }
 
@@ -110,7 +111,7 @@ public class HttpClientCommandLineExtension implements ParameterResolver {
 
   @Override
   public Object resolveParameter(ParameterContext parameterContext,
-      ExtensionContext extensionContext) throws ParameterResolutionException {
+      @NotNull ExtensionContext extensionContext) throws ParameterResolutionException {
     var parameters = parameterContext.getAnnotatedElement()
         .getAnnotation(HttpClientCommandLineParameters.class);
 
@@ -119,7 +120,7 @@ public class HttpClientCommandLineExtension implements ParameterResolver {
 
   @Override
   public boolean supportsParameter(ParameterContext parameterContext,
-      ExtensionContext extensionContext) throws ParameterResolutionException {
+      @NotNull ExtensionContext extensionContext) throws ParameterResolutionException {
     return HttpClientCommandLine.class.isAssignableFrom(parameterContext.getParameter().getType())
         && parameterContext.isAnnotated(HttpClientCommandLineParameters.class);
   }

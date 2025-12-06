@@ -27,8 +27,8 @@ import java.lang.System.Logger.Level;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.BiPredicate;
 import java.util.stream.Stream;
 import org.apache.commons.exec.CommandLine;
@@ -80,19 +80,19 @@ public class HttpClientCommandLine {
 
   private Integer connectTimeout;
   private Path[] directories = new Path[0];
-  private boolean dockerMode;
+  private Boolean dockerMode;
   private Path environmentFile;
-  private List<String> environmentVariables;
+  private Set<String> environmentVariables;
   private String environmentName;
   private String executable = "ijhttp";
   private Path[] files = new Path[0];
-  private boolean insecure;
+  private Boolean insecure;
   private LogLevel logLevel = LogLevel.BASIC;
-  private int maxDepth = Integer.MAX_VALUE;
+  private Integer maxDepth = Integer.MAX_VALUE;
   private Path privateEnvironmentFile;
-  private List<String> privateEnvironmentVariables;
+  private Set<String> privateEnvironmentVariables;
   private String proxy;
-  private boolean report;
+  private Boolean report;
   private Path reportPath;
   private Integer socketTimeout;
 
@@ -143,7 +143,7 @@ public class HttpClientCommandLine {
   public void environmentVariable(@NotNull String environmentVariable) {
     synchronized (this) {
       if (isNull(environmentVariables)) {
-        environmentVariables = new ArrayList<>();
+        environmentVariables = new HashSet<>();
       }
     }
     environmentVariables.add(environmentVariable);
@@ -154,8 +154,8 @@ public class HttpClientCommandLine {
    *
    * @param environmentVariables list of environment variables
    */
-  public void environmentVariables(@NotNull List<String> environmentVariables) {
-    this.environmentVariables = environmentVariables;
+  public void environmentVariables(@NotNull Set<String> environmentVariables) {
+    this.environmentVariables = Set.copyOf(environmentVariables);
   }
 
   /**
@@ -230,7 +230,7 @@ public class HttpClientCommandLine {
   public void privateEnvironmentVariable(@NotNull String privateEnvironmentVariable) {
     synchronized (this) {
       if (isNull(privateEnvironmentVariables)) {
-        privateEnvironmentVariables = new ArrayList<>();
+        privateEnvironmentVariables = new HashSet<>();
       }
     }
     privateEnvironmentVariables.add(privateEnvironmentVariable);
@@ -242,8 +242,8 @@ public class HttpClientCommandLine {
    * @param privateEnvironmentVariables list of private environment variables
    * @see #environmentVariables
    */
-  public void privateEnvironmentVariables(@NotNull List<String> privateEnvironmentVariables) {
-    this.privateEnvironmentVariables = privateEnvironmentVariables;
+  public void privateEnvironmentVariables(@NotNull Set<String> privateEnvironmentVariables) {
+    this.privateEnvironmentVariables = Set.copyOf(privateEnvironmentVariables);
   }
 
   /**
@@ -295,6 +295,7 @@ public class HttpClientCommandLine {
    * @throws IOException              if path to HTTP or environment files or report directory is
    *                                  wrong
    */
+  @NotNull
   public CommandLine getCommandLine() throws IllegalArgumentException, IOException {
     var commandLine = new CommandLine(executable);
 
@@ -335,22 +336,17 @@ public class HttpClientCommandLine {
   }
 
   private void flags(CommandLine commandLine) {
-    if (dockerMode) {
+    if (nonNull(dockerMode) && dockerMode) {
       commandLine.addArgument(DOCKER_MODE);
     }
-    if (insecure) {
+    if (nonNull(insecure) && insecure) {
       commandLine.addArgument(INSECURE);
     }
   }
 
   private void logLevel(CommandLine commandLine) {
-    switch (logLevel) {
-      case HEADERS:
-      case VERBOSE:
-        commandLine.addArgument(LOG_LEVEL).addArgument(logLevel.name());
-      case BASIC:
-      default:
-        // do nothing
+    if (logLevel == LogLevel.HEADERS || logLevel == LogLevel.VERBOSE) {
+      commandLine.addArgument(LOG_LEVEL).addArgument(logLevel.name());
     }
   }
 
@@ -371,7 +367,7 @@ public class HttpClientCommandLine {
   }
 
   private void report(CommandLine commandLine) {
-    if (report) {
+    if (nonNull(report) && report) {
       commandLine.addArgument(REPORT);
       if (nonNull(reportPath)) {
         commandLine.addArgument(reportPath.toString(), false);

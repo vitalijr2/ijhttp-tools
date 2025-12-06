@@ -23,6 +23,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Set;
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.ExecuteException;
 import org.apache.commons.exec.ExecuteStreamHandler;
@@ -502,8 +503,8 @@ class RunMojoFastTest {
       "private environment variable with spaces,N/A,qwerty=xzy abc,--private-env-variables|qwerty=xzy abc|*",
       "multi environment variables,N/A,abc=123|qwerty=xzy,--private-env-variables|abc=123|--private-env-variables|qwerty=xzy|*"}, nullValues = "N/A")
   void multiValueArguments(String testName,
-      @ConvertWith(PipedStringToListConverter.class) List<String> environmentVariables,
-      @ConvertWith(PipedStringToListConverter.class) List<String> privateEnvironmentVariables,
+      @ConvertWith(PipedStringToSetConverter.class) Set<String> environmentVariables,
+      @ConvertWith(PipedStringToSetConverter.class) Set<String> privateEnvironmentVariables,
       @ConvertWith(PipedStringToListConverter.class) List<String> expectedArguments)
       throws IOException, MojoExecutionException {
     // given
@@ -523,7 +524,7 @@ class RunMojoFastTest {
     // then
     var arguments = commandLine.getArguments();
 
-    assertThat(testName, arguments, arrayContaining(expectedArguments.toArray()));
+    assertThat(testName, arguments, arrayContainingInAnyOrder(expectedArguments.toArray()));
   }
 
   @DisplayName("Watchdog")
@@ -592,6 +593,27 @@ class RunMojoFastTest {
       var slashyString = (String) source;
 
       return List.of(slashyString.split("\\|"));
+    }
+
+  }
+
+  static class PipedStringToSetConverter extends SimpleArgumentConverter {
+
+    @Override
+    protected Object convert(Object source, Class<?> targetType)
+        throws ArgumentConversionException {
+      if (!targetType.isAssignableFrom(Set.class)) {
+        throw new ArgumentConversionException(
+            "Cannot convert to " + targetType.getName() + ": " + source);
+      }
+
+      if (isNull(source)) {
+        return null;
+      }
+
+      var slashyString = (String) source;
+
+      return Set.of(slashyString.split("\\|"));
     }
 
   }

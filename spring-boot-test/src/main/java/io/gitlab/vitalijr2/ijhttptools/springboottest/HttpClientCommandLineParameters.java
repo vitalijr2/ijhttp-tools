@@ -19,9 +19,12 @@
  */
 package io.gitlab.vitalijr2.ijhttptools.springboottest;
 
+import static java.util.Objects.isNull;
+
 import io.gitlab.vitalijr2.ijhttptools.cli.LogLevel;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Set;
 import java.util.StringJoiner;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -54,7 +57,7 @@ public class HttpClientCommandLineParameters {
   /**
    * Public environment variables.
    */
-  private List<String> environmentVariables;
+  private Set<String> environmentVariables;
   /**
    * Name of the environment in a configuration file.
    */
@@ -83,7 +86,7 @@ public class HttpClientCommandLineParameters {
   /**
    * Private environment variables.
    */
-  private List<String> privateEnvironmentVariables;
+  private Set<String> privateEnvironmentVariables;
   /**
    * Proxy URI.
    * <p>
@@ -126,7 +129,7 @@ public class HttpClientCommandLineParameters {
    * @since 1.2.0
    */
   public void setDirectories(List<Path> directories) {
-    this.directories = directories;
+    this.directories = isNull(directories) ? null : List.copyOf(directories);
   }
 
   public boolean isDockerMode() {
@@ -152,15 +155,16 @@ public class HttpClientCommandLineParameters {
     this.environmentFile = environmentFile;
   }
 
-  public List<String> getEnvironmentVariables() {
+  public Set<String> getEnvironmentVariables() {
     return environmentVariables;
   }
 
   /**
    * Public environment variables.
    */
-  public void setEnvironmentVariables(List<String> environmentVariables) {
-    this.environmentVariables = environmentVariables;
+  public void setEnvironmentVariables(Set<String> environmentVariables) {
+    this.environmentVariables =
+        isNull(environmentVariables) ? null : Set.copyOf(environmentVariables);
   }
 
   public String getEnvironmentName() {
@@ -197,7 +201,7 @@ public class HttpClientCommandLineParameters {
    * @since 1.2.0
    */
   public void setFiles(List<Path> files) {
-    this.files = files;
+    this.files = isNull(files) ? null : List.copyOf(files);
   }
 
   public boolean isInsecure() {
@@ -233,15 +237,16 @@ public class HttpClientCommandLineParameters {
     this.privateEnvironmentFile = privateEnvironmentFile;
   }
 
-  public List<String> getPrivateEnvironmentVariables() {
+  public Set<String> getPrivateEnvironmentVariables() {
     return privateEnvironmentVariables;
   }
 
   /**
    * Private environment variables.
    */
-  public void setPrivateEnvironmentVariables(List<String> privateEnvironmentVariables) {
-    this.privateEnvironmentVariables = privateEnvironmentVariables;
+  public void setPrivateEnvironmentVariables(Set<String> privateEnvironmentVariables) {
+    this.privateEnvironmentVariables =
+        isNull(privateEnvironmentVariables) ? null : Set.copyOf(privateEnvironmentVariables);
   }
 
   public String getProxy() {
