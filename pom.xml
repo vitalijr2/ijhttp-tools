@@ -502,7 +502,7 @@
     <jetbrains-annotations.version>26.0.2-1</jetbrains-annotations.version>
     <junit.version>6.0.1</junit.version>
     <maven-minimal.version>3.8.8</maven-minimal.version>
-    <mockito.version>5.20.0</mockito.version>
+    <mockito.version>5.21.0</mockito.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <scm>
