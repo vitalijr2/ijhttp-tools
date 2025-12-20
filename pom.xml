@@ -502,6 +502,25 @@
     <profile>
       <id>run-its</id>
     </profile>
+    <profile>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>spotbugs-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                  <goal>verify</goal>
+                </goals>
+              </execution>
+            </executions>
+            <groupId>com.github.spotbugs</groupId>
+          </plugin>
+        </plugins>
+      </build>
+      <id>spotbugs</id>
+    </profile>
   </profiles>
   <properties>
     <commons-exec.version>1.6.0</commons-exec.version>

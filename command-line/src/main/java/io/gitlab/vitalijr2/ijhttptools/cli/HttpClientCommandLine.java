@@ -80,19 +80,19 @@ public class HttpClientCommandLine {
 
   private Integer connectTimeout;
   private Path[] directories = new Path[0];
-  private Boolean dockerMode;
+  private volatile boolean dockerMode;
   private Path environmentFile;
   private Set<String> environmentVariables;
   private String environmentName;
   private String executable = "ijhttp";
   private Path[] files = new Path[0];
-  private Boolean insecure;
+  private volatile boolean insecure;
   private LogLevel logLevel = LogLevel.BASIC;
-  private Integer maxDepth = Integer.MAX_VALUE;
+  private volatile int maxDepth = Integer.MAX_VALUE;
   private Path privateEnvironmentFile;
   private Set<String> privateEnvironmentVariables;
   private String proxy;
-  private Boolean report;
+  private volatile boolean report;
   private Path reportPath;
   private Integer socketTimeout;
 
@@ -336,10 +336,10 @@ public class HttpClientCommandLine {
   }
 
   private void flags(CommandLine commandLine) {
-    if (nonNull(dockerMode) && dockerMode) {
+    if (dockerMode) {
       commandLine.addArgument(DOCKER_MODE);
     }
-    if (nonNull(insecure) && insecure) {
+    if (insecure) {
       commandLine.addArgument(INSECURE);
     }
   }
@@ -367,7 +367,7 @@ public class HttpClientCommandLine {
   }
 
   private void report(CommandLine commandLine) {
-    if (nonNull(report) && report) {
+    if (report) {
       commandLine.addArgument(REPORT);
       if (nonNull(reportPath)) {
         commandLine.addArgument(reportPath.toString(), false);
