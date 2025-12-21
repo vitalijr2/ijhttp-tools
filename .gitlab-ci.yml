@@ -76,7 +76,7 @@ verify:default:
 verify:merge-request:
   stage: test
   script:
-    - ./mvnw $MAVEN_CLI_OPTS verify
+    - ./mvnw $MAVEN_CLI_OPTS verify -Pspotbugs
     - awk -F"," '{ instructions += $4 + $5; covered += $5 } END { print covered, "/", instructions, "instructions covered"; print 100*covered/instructions, "% covered" }' `find . -name jacoco.csv -print`
     - bash <(curl -Ls https://coverage.codacy.com/get.sh)
 #    - ./mvnw $MAVEN_CLI_OPTS verify -DskipTests -Prun-its
