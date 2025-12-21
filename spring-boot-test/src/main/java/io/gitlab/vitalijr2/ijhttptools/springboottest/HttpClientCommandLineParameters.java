@@ -309,4 +309,5 @@ public class HttpClientCommandLineParameters {
         .add("proxy='" + proxy + "'").add("report=" + report).add("reportPath=" + reportPath)
         .add("socketTimeout=" + socketTimeout).toString();
   }
+
 }
