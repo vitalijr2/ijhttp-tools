@@ -194,6 +194,6 @@
   </profiles>
   <properties>
     <plugin-annotations.version>3.15.2</plugin-annotations.version>
-    <plugin-api.version>3.9.11</plugin-api.version>
+    <plugin-api.version>3.9.12</plugin-api.version>
   </properties>
 </project>
