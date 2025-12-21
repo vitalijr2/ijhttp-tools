@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <artifactId>ijhttp-tools</artifactId>
   <build>
-    <defaultGoal>clean verify</defaultGoal>
+    <defaultGoal>clean install</defaultGoal>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -270,6 +270,14 @@
           <groupId>org.simplify4u.plugins</groupId>
           <version>1.1.0</version>
         </plugin>
+        <plugin>
+          <artifactId>spotbugs-maven-plugin</artifactId>
+          <configuration>
+            <htmlOutput>true</htmlOutput>
+          </configuration>
+          <groupId>com.github.spotbugs</groupId>
+          <version>4.9.8.2</version>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -493,6 +501,25 @@
     </profile>
     <profile>
       <id>run-its</id>
+    </profile>
+    <profile>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>spotbugs-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                  <goal>verify</goal>
+                </goals>
+              </execution>
+            </executions>
+            <groupId>com.github.spotbugs</groupId>
+          </plugin>
+        </plugins>
+      </build>
+      <id>spotbugs</id>
     </profile>
   </profiles>
   <properties>

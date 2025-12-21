@@ -32,6 +32,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.ExecuteException;
@@ -89,7 +90,7 @@ public class RunMojo extends AbstractMojo {
   private List<File> directories;
   private boolean dockerMode;
   private File environmentFile;
-  private List<String> environmentVariables;
+  private Set<String> environmentVariables;
   private String environmentName;
   private String executable;
   private List<File> files;
@@ -97,7 +98,7 @@ public class RunMojo extends AbstractMojo {
   private LogLevel logLevel;
   private File outputFile;
   private File privateEnvironmentFile;
-  private List<String> privateEnvironmentVariables;
+  private Set<String> privateEnvironmentVariables;
   private String proxy;
   private boolean quietLogs;
   private boolean report;
@@ -178,7 +179,7 @@ public class RunMojo extends AbstractMojo {
    */
   @Parameter(property = "ijhttp.files", required = true)
   public void setDirectories(List<File> directories) {
-    this.directories = directories;
+    this.directories = isNull(directories) ? null : List.copyOf(directories);
   }
 
   /**
@@ -212,8 +213,9 @@ public class RunMojo extends AbstractMojo {
    * </code></pre>
    */
   @Parameter(property = "ijhttp.env-variables")
-  public void setEnvironmentVariables(List<String> environmentVariables) {
-    this.environmentVariables = environmentVariables;
+  public void setEnvironmentVariables(Set<String> environmentVariables) {
+    this.environmentVariables =
+        isNull(environmentVariables) ? null : Set.copyOf(environmentVariables);
   }
 
   /**
@@ -246,7 +248,7 @@ public class RunMojo extends AbstractMojo {
    */
   @Parameter(property = "ijhttp.files", required = true)
   public void setFiles(List<File> files) {
-    this.files = files;
+    this.files = isNull(files) ? null : List.copyOf(files);
   }
 
   /**
@@ -291,8 +293,9 @@ public class RunMojo extends AbstractMojo {
    * @see #environmentVariables
    */
   @Parameter(property = "ijhttp.private-env-variables")
-  public void setPrivateEnvironmentVariables(List<String> privateEnvironmentVariables) {
-    this.privateEnvironmentVariables = privateEnvironmentVariables;
+  public void setPrivateEnvironmentVariables(Set<String> privateEnvironmentVariables) {
+    this.privateEnvironmentVariables =
+        isNull(privateEnvironmentVariables) ? null : Set.copyOf(privateEnvironmentVariables);
   }
 
   /**
